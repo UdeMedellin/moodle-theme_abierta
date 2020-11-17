@@ -1,0 +1,14 @@
+<section id="box-stats">
+    <div class="stats-items">
+        {{#stats}}
+            {{#url}}<a href="{{{ url }}}" target="_blank" class="one-statistic">{{/url}}
+            {{^url}}<div class="one-statistic">{{/url}}
+                {{#image}}
+                        <img src="{{{ image }}}" title="{{ content }}" />
+                {{/image}}
+                <h3>{{{ content }}}</h3>
+            {{^url}}</div>{{/url}}
+            {{#url}}</a>{{/url}}
+        {{/stats}}
+    </div>
+</section>

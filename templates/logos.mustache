@@ -1,0 +1,18 @@
+<section id="box-logos">
+    <h2>{{#str}}logostitle, theme_abierta{{/str}}</h2>
+
+    <ul>
+    {{#logos}}
+        <li class="one-logo">
+            {{#url}}<a href="{{{ url }}}" target="_blank">{{/url}}
+            {{#image}}
+                <img src="{{{ image }}}" title="{{ content }}" />
+            {{/image}}
+            {{^image}}
+                {{{ content }}}
+            {{/image}}
+            {{#url}}</a>{{/url}}
+        </li>
+    {{/logos}}
+    </ul>
+</section>

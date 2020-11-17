@@ -1,0 +1,498 @@
+/*
+ * This file is part of Moodle - http://moodle.org/
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ * Styles to special contents: pit_body
+ *
+ * @package    theme_abierta
+ * @copyright  2020 David Herney
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ */
+.pit_body {
+  margin: auto;
+  text-align: justify;
+  max-width: 1024px;
+  font-family: "Poppins", sans-serif;
+}
+
+.pit_body * {
+  font-family: "Poppins", sans-serif;
+  color: #3a3a3a;
+  font-size: 14px;
+}
+
+.pit_body h1 {
+  font-size: 35px;
+  color: #7388ff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pit_body h2 {
+  font-size: 19px;
+  color: #4d6fb7;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.pit_body h3 {
+  font-size: 19px;
+  color: #314776;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.pit_body h4 {
+  font-size: 14px;
+  color: #4d6bf7;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.pit_body h5 {
+  font-size: 14px;
+}
+
+.pit_body h6 {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.pit_bloque_tabla table {
+  background-color: #ebf3ff;
+  overflow-x: auto;
+  border-radius: 0.6em;
+  border-spacing: 0;
+  margin: auto;
+}
+
+.pit_bloque_tabla th,
+td {
+  border: 1px solid #4969cc;
+  padding: 0.5em 1em;
+}
+
+.pit_bloque_tabla thead tr:first-child th:first-child {
+  border-radius: 0.6em 0 0 0;
+}
+
+.pit_bloque_tabla thead tr:first-child th:last-child {
+  border-radius: 0 0.6em 0 0;
+}
+
+.pit_bloque_tabla tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 0.6em;
+}
+
+.pit_bloque_tabla tbody tr:last-child td:last-child {
+  border-radius: 0 0 0.6em 0;
+}
+
+.pit_tabla_datos td .pit_celda_numero {
+  text-align: right;
+}
+
+.pit_tabla_datos td .pit_celda_total {
+  text-align: right;
+  font-weight: bold;
+}
+
+.pit_body img {
+  border-radius: 16px;
+}
+
+.pit_body hr {
+  border-bottom: 1px #164653 solid;
+  width: 300px;
+  margin: 10px 0;
+}
+
+.pit_body cite {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.pit_body blockquote {
+  color: #4366ad;
+  font-style: italic;
+}
+
+.pit_body ul {
+  list-style: none;
+}
+
+.pit_bloque_autores ul li {
+  list-style: none;
+  padding-bottom: 0;
+  font-size: 12px;
+}
+
+.pit_body ul li::before,
+.pit_body dl dt::before {
+  content: "\2022";
+  font-size: 20px;
+  color: #4d6fb7;
+  font-weight: bold;
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+}
+
+.pit_body ol li {
+  padding-bottom: 10px;
+}
+
+.pit_bloque_autores ul li {
+  list-style: none;
+  padding-bottom: 0;
+  font-size: 12px;
+}
+
+.pit_bloque_autores ul li:before {
+  content: "";
+}
+
+.pit_bloque_autores {
+  font-size: 11px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: right;
+  color: #888888;
+}
+
+.pit_anexo_interno {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pit_body blockquote {
+  font-size: small;
+  font-weight: normal;
+  text-align: left;
+  color: #3a3a3a;
+  font-style: normal;
+  padding: 10px;
+}
+
+.pit_body dt {
+  color: #4d6fb7;
+  margin-bottom: 5px;
+  margin-left: 1.5em;
+}
+
+.pit_body dd {
+  margin: 0;
+  padding: 0;
+  background-color: #edf4ff;
+  border-radius: 16px;
+}
+
+.pit_codigo_anexo {
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 10px;
+}
+
+.pit_body strong,
+.pit_literal {
+  font-weight: bold;
+}
+
+.pit_body em,
+.pit_enfasis {
+  color: #1994ff;
+}
+
+.pit_anexo_interno.pit_bloque_imagen .pit_imagen {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pit_pie_anexo_interno,
+.pit_bloque_piedeimagen,
+.pit_bloque_piedetabla,
+.pit_bloque_piedegrafico {
+  text-align: center;
+  color: #40367f;
+  font-style: italic;
+  padding: 6px 12px;
+  background: #ebf3ff;
+  border-radius: 15px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.pit_pie_anexo_interno .pit_etiqueta {
+  font-weight: 600;
+  color: #4d6fb7;
+}
+
+.pit_ancla sup {
+  font-size: 10px;
+  font-style: italic;
+  font-weight: bold;
+  color: #c14f23;
+}
+
+.pit_nota_al_pie .pit_ancla {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  color: #4f69cc;
+}
+
+.pit_nota_al_pie p {
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+  color: #4f69cc;
+}
+
+.pit_enlace:link,
+.pit_enlace:visited {
+  text-decoration: underline;
+  color: #4f69cc;
+}
+
+.pit_ancla:link,
+.pit_ancla:visited,
+.pit_body a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #4f69cc;
+}
+
+.pit_enlace:hover,
+.pit_ancla:hover {
+  color: #4f69cc;
+  text-decoration: underline;
+}
+/* Textos Especiales */
+
+/*************** Nota ******************/
+
+.pit_body .pit_nota {
+  position: relative;
+  padding: 20px;
+  background-color: #edf4ff;
+  border: 1px solid #4f69cc;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+}
+
+.pit_body .pit_nota:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 50%;
+  border-radius: 2px;
+  top: 0px;
+  left: 30px;
+}
+
+.pit_body .pit_nota:after {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 5px;
+  border-radius: 5px;
+  top: 25%;
+  right: -2px;
+}
+
+.pit_nota > .pit_etiqueta {
+  background-color: #7590e0;
+  border-radius: 25px;
+  padding: 5px 10px;
+  color: white;
+  position: absolute;
+  top: -35px;
+  left: 0;
+}
+
+.pit_nota .pit_etiqueta:before {
+  position: absolute;
+  top: -15px;
+  left: -50px;
+  color: white;
+  width: 55px;
+  height: 55px;
+  background: url([[pix:theme|sprite_texts]]) no-repeat;
+  background-size: 400%;
+  background-position: 38%;
+}
+
+.pit_nota.important,
+.pit_nota.pit_nota.example,
+.pit_nota.link,
+.pit_nota.activity,
+.pit_nota.connection {
+  border-color: transparent;
+}
+
+.pit_nota.important > .pit_etiqueta,
+.pit_nota.pit_nota.example > .pit_etiqueta,
+.pit_nota.link > .pit_etiqueta,
+.pit_nota.activity > .pit_etiqueta {
+  top: -20px;
+}
+
+/********* important ********/
+
+.pit_nota.important > .pit_etiqueta {
+  background-color: #e55049;
+  color: #ffffff;
+}
+
+.pit_nota.important:before {
+  background-color: #e55049;
+}
+
+.pit_nota.important:after {
+  background-color: #e55049;
+}
+
+.pit_nota.important > .pit_etiqueta:before {
+  content: "";
+  background-size: 400%;
+  background-position: 5%;
+  left: -55px;
+}
+
+/*Box examples */
+
+.pit_nota.example > .pit_etiqueta {
+  background-color: #00c9cb;
+  color: #ffffff;
+}
+
+.pit_nota.example:before {
+  background-color: #00c9cb;
+}
+
+.pit_nota.example:after {
+  background-color: #00c9cb;
+}
+
+.pit_nota.example > .pit_etiqueta:before {
+  content: "";
+  background-size: 400%;
+  background-position: 38%;
+}
+
+/*Enlaces - box_required_link */
+
+.pit_nota.link > .pit_etiqueta {
+  background-color: #ffa374;
+  color: #ffffff;
+}
+
+.pit_nota.link:before {
+  background-color: #ffa374;
+}
+
+.pit_nota.link:after {
+  background-color: #ffa374;
+}
+
+.pit_nota.link > .pit_etiqueta:before {
+  content: "";
+  background-size: 400%;
+  background-position: 68%;
+}
+
+/********* box connection ********/
+
+.pit_nota.connection {
+  position: relative;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.pit_nota.connection:before {
+  position: absolute;
+  content: "";
+  background-color: #957c48;
+  height: 1px;
+  width: 50%;
+  border-radius: 2px;
+  top: -5px;
+  left: 0;
+}
+
+.pit_nota.connection:after {
+  position: absolute;
+  content: "";
+  background-color: #957c48;
+  height: 1px;
+  width: 50%;
+  border-radius: 2px;
+  bottom: -5px;
+  right: 0;
+  top: unset;
+}
+
+/********* box activity ********/
+
+.pit_nota.activity > .pit_etiqueta {
+  background-color: #8796d7;
+  color: #ffffff;
+}
+
+.pit_nota.activity:before {
+  background-color: #8796d7;
+}
+
+.pit_nota.activity:after {
+  background-color: #8796d7;
+}
+
+.pit_nota.activity > .pit_etiqueta:before {
+  content: "";
+  background-size: 400%;
+  background-position: 100%;
+}
+
+@media (max-width: 800px) {
+  .pit_nota .pit_etiqueta:before {
+    display: none;
+  }
+}
+
+/******* Créditos ********/
+.pit_creditos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pit_creditos .pit_creditos_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.pit_creditos .pit_creditos_item span{
+  font-size: 16px;
+}
+.pit_creditos .pit_creditos_item span:first-child{
+  font-weight: bold;
+  padding-right: 10px;
+  justify-self: right;
+}

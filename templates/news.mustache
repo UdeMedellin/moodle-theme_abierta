@@ -1,0 +1,30 @@
+<section id="box-news">
+    <h2>{{#str}}newstitle, theme_abierta{{/str}}</h2>
+    <div class="{{#newsinslider}}horizontalslider flexslider{{/newsinslider}}{{^newsinslider}}regularview{{/newsinslider}}" data-width="200">
+        <ul class="slides">
+        {{#news}}
+            {{#newsinslider}}<li>{{/newsinslider}}
+            {{#url}}<a href="{{{ url }}}" class="one-news">{{/url}}
+            {{^url}}<span class="one-news">{{/url}}
+                {{#image}}
+                    <img src="{{{ image }}}" />
+                {{/image}}
+
+                {{{ content }}}
+
+                {{^image}}
+                    {{#url}}
+                        <div>
+                            <a href="{{{ url }}}">
+                                {{#str}}more, theme_abierta{{/str}}
+                            </a>
+                        </div>
+                    {{/url}}
+                {{/image}}
+            {{#url}}</a>{{/url}}
+            {{^url}}</span>{{/url}}
+            {{#newsinslider}}</li>{{/newsinslider}}
+        {{/news}}
+        </ul>
+    </div>
+</section>

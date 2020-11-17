@@ -1,0 +1,76 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_abierta/header
+
+    Page header template
+
+    Example context (json): {}
+}}
+<nav class="fixed-top navbar navbar-light navbar-expand moodle-has-zindex">
+    <div>
+        {{#hasdrawertoggle}}
+            <div data-region="drawer-toggle" class="d-inline-block mr-3 drawer-toggle">
+                <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+            </div>
+        {{/hasdrawertoggle}}
+
+        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# compact_logo }}has-logo{{/ compact_logo }}
+            {{^ compact_logo }}
+                d-none d-sm-inline
+            {{/ compact_logo }}
+                ">
+            {{# compact_logo }}
+                <span class="logo d-none d-sm-inline">
+                    <img src="{{compact_logo}}" alt="{{sitename}}">
+                </span>
+            {{/ compact_logo }}
+            {{^ compact_logo }}
+                <span class="site-name d-none d-md-inline">{{{ sitename }}}</span>
+            {{/ compact_logo }}
+        </a>
+
+        <ul class="nav navbar-nav ml-auto">
+
+            {{>theme_abierta/mainmenu}}
+
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- page_heading_menu -->
+                {{{ output.page_heading_menu }}}
+            </ul>
+            <div class="d-lg-block">
+                {{{ output.search_box }}}
+            </div>
+
+            <div class="lang-menu">
+                {{{ output.render_lang_menu }}}
+            </div>
+
+            {{#socialnet}}
+            <div class="socialnetworks">
+                <span class="nav-item">
+                    {{{.}}}
+                </span>
+            </div>
+            {{/socialnet}}
+
+            {{{ output.navbar_plugin_output }}}
+
+            {{{ output.user_menu }}}
+        </ul>
+    </div>
+</nav>

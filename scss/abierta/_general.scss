@@ -1,0 +1,138 @@
+/*******************
+Bodys
+*******************/
+body {
+    background-image: var(--first-bg-url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.pagelayout-popup {
+    margin-left: 0;
+}
+/*******************
+Pages
+*******************/
+#page {
+    margin-top: $navbar-height;
+
+    &.container-fluid {
+        padding: 2rem 2rem 0 2rem;
+    }
+}
+
+#page-admin-index.pagelayout-maintenance {
+    margin-left: 0;
+
+    #page-wrapper::after {
+        min-height: inherit;
+    }
+}
+
+#page-wrapper {
+    height: unset   ;
+}
+
+/*******************
+Card
+*******************/
+.card {
+    border-color: $card-border-color;
+    border-radius: $card-border-radius;
+    -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    &.card-block,
+    .card-block,
+    .card-body {
+        padding: $m-card-padding;
+    }
+
+    &.card-block {
+        background: #fff var(--second-bg-url) no-repeat left center;
+    }
+}
+
+section.card {
+    background-color: transparent;
+}
+
+/*******************
+Headings
+*******************/
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: $brand-primary;
+    font-family: $font-family-sans-serif;
+    font-weight: $headings-font-weight;
+}
+
+h4 {
+    font-size: 20px;
+    color: $brand-primary;
+    margin-top: 50px;
+}
+
+h5 {
+    font-size: 16px;
+    color: $brand-primary;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* Third party plugins compatibility. */
+/* Course format grid */
+#gridshadebox_content {
+    top: 80px !important;
+}
+
+.popover .arrow {
+    bottom: -8px;
+}
+
+a {
+    color: #7c8f8c;
+}
+
+b, strong {
+    color: #0B476F;
+    font-weight:bold;
+}
+
+i, em {
+    color: $brand-primary;
+    font-weight:800;
+    font-style: italic;
+}
+
+#page-header {
+    .card {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .card-block {
+        padding: 0;
+    }
+}
+
+.nav-tabs {
+    .nav-link.active:hover,
+    .nav-link.active {
+        color: #26cad3 !important;
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+}

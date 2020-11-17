@@ -1,0 +1,206 @@
+#page-login-index.abierta-login {
+    margin-left: 0;
+    background-color: #2a6d80;
+
+    #maincontent {
+        height: 0;
+    }
+
+    #region-main {
+        padding: 0;
+    }
+
+    #page-wrapper {
+        padding: 0;
+
+        #page {
+            margin-top: 0;
+            min-height: 100vh;
+        }
+
+        &::after {
+            min-height: 0;
+        }
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        img {
+            max-height: 200px;
+        }
+    }
+
+    strong {
+        color: #449b9f;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .instructionspanel {
+        border: none;
+    }
+
+    .loginpanel {
+        border: none;
+        background-color: transparent;
+
+        .box-main {
+            min-height: $m-login-boxheight;
+        }
+
+        .card-block {
+            padding: 0;
+
+            .form {
+                padding: 20px 3%;
+                height: $m-login-boxheight;
+                max-height: $m-login-boxheight;
+                min-height: 600px;
+                background-color: #fff;
+                align-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                overflow: auto;
+
+                i,
+                .text-info,
+                .highlight {
+                    color: #449b9f !important;
+                }
+
+                > form {
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                h2,
+                h3,
+                .welcome {
+                    font-size: 2.2rem;
+                    font-weight: normal;
+                    color: var(--color-cont-third);
+                    margin-top: 30px;
+                }
+
+                .input-group-addon {
+                    width: 40px;
+                    line-height: 30px;
+                    padding: 4px 10px;
+                    margin-bottom: 0;
+                    font-size: 1rem;
+                    text-align: center;
+                    background-color: #707070;
+                    border: 1px solid rgba(0,0,0,.15);
+                    border-right: 0;
+
+                    i {
+                        color: #fff !important;
+                    }
+                }
+                .input-group-username .input-group-addon {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                .input-group-password .input-group-addon {
+                    border-top: 0;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+                #username,
+                #password {
+                    border: 1px solid rgba(0, 0, 0, .15);
+                    height: 44px;
+                }
+                #username {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                #password {
+                    border-top: 0;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+                #loginbtn {
+                    padding: 0.5rem;
+                }
+            }
+
+            .instructions {
+                padding: 0 15px;
+                color: #fff;
+                min-height: $m-login-boxheight;
+                align-content: center;
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                background: var(--login-bg-url) no-repeat center center;
+
+                img {
+                    max-width: 100%;
+                }
+
+                .text-info {
+                    color: #fff !important;
+                }
+
+                h2,
+                h3 {
+                    color: #fff;
+                }
+
+                hr {
+                    width: 50%;
+                    margin-top: 0;
+                    border-top: 1px solid rgba(255, 255, 255, .7);
+                }
+
+                .m-t-2 {
+                    margin-top: 1rem !important;
+                }
+
+                .btn-secondary {
+                    border: none;
+                }
+
+                > div {
+                    margin-top: 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .box.generalbox.boxaligncenter {
+        border-color: $card-border-color;
+        border-radius: $card-border-radius;
+        -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        padding: 2rem !important;
+    }
+}
+
+#page-login-signup {
+    margin-left: 0;
+    #page-wrapper {
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        &:after {
+            min-height: 0;
+        }
+
+        #page {
+            margin-top: 0;
+            padding-top: 50px;
+        }
+    }
+}
+
+.potentialidplist .potentialidp {
+    margin-bottom: 5px;
+}

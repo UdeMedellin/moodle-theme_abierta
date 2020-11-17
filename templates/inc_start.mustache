@@ -1,0 +1,27 @@
+{{{ output.doctype }}}
+<html {{{ output.htmlattributes }}}>
+<head>
+    <title>{{{ output.page_title }}}</title>
+    {{#output.favicon}}
+    <link rel="shortcut icon" href="{{{ output.favicon }}}" />
+    {{/output.favicon}}
+    {{{ output.standard_head_html }}}
+
+    {{>theme_abierta/generalheaders}}
+
+    <script>
+        M.abierta = M.abierta || {};
+
+        {{#globalvars}}
+        M.abierta.courseid = {{ globalvars.courseid }};
+        {{/globalvars}}
+    </script>
+</head>
+
+<body {{{ bodyattributes }}}>
+
+{{>theme_abierta/header}}
+
+<div id="page-wrapper">
+
+    {{{ output.standard_top_of_body_html }}}
