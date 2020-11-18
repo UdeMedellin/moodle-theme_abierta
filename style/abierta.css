@@ -118,7 +118,7 @@ nav.navbar ul.navbar-nav .usermenu {
 }
 
 #box-news a.one-news:hover img {
-    transform: scale(0.9);
+    transform: scale(1.2);
 }
 
 #box-news .regularview a.one-news {
