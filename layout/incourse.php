@@ -85,8 +85,15 @@ $themesettings = new \theme_abierta\util\theme_settings();
 
 $templatecontext = array_merge($templatecontext, $themesettings->generalvars(), $themesettings->footer_items());
 
-if (isset($PAGE->cm->modname) && in_array($PAGE->cm->modname, $moduleswithnavinblocks)) {
-    echo $OUTPUT->render_from_template('theme_abierta/incourse', $templatecontext);
+$urlpath = $PAGE->url->get_path();
+
+if (stripos($urlpath, 'enrol/index') === false) {
+
+    if (isset($PAGE->cm->modname) && in_array($PAGE->cm->modname, $moduleswithnavinblocks)) {
+        echo $OUTPUT->render_from_template('theme_abierta/incourse', $templatecontext);
+    } else {
+        echo $OUTPUT->render_from_template('theme_abierta/course', $templatecontext);
+    }
 } else {
-    echo $OUTPUT->render_from_template('theme_abierta/course', $templatecontext);
+    echo $OUTPUT->render_from_template('theme_abierta/columns2', $templatecontext);
 }
