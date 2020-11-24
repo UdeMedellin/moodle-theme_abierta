@@ -1,4 +1,5 @@
 #top-footer {
+    background-color: #d1d5d8;
     padding: 0;
 
     h3 {
@@ -20,6 +21,18 @@
         }
     }
 
+    .footer_content {
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        > div {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 45%;
+        }
+    }
 }
 
 .footer_about {

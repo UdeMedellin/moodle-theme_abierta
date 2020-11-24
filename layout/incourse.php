@@ -43,6 +43,8 @@ $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $blockscontenthtml = $OUTPUT->blocks('side-cont');
 $hascontentblocks = strpos($blockscontenthtml, 'data-block=') !== false;
 
+$postblockshtml = $OUTPUT->blocks('side-post');
+
 $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
@@ -65,6 +67,7 @@ $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
+    'sidepostblocks' => $postblockshtml,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,
     'hasdrawertoggle' => true,
