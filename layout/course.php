@@ -78,6 +78,7 @@ $templatecontext = [
     'globalvars' => $globalvars,
     'contentblocks' => $blockscontenthtml,
     'hascontentblocks' => $hascontentblocks,
+    'coursename' => $PAGE->course->fullname
 ];
 
 // Improve boost navigation.

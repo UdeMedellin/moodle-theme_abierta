@@ -77,6 +77,7 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'contentblocks' => $blockscontenthtml,
     'hascontentblocks' => $hascontentblocks,
+    'coursename' => $PAGE->course->fullname
 ];
 
 // Improve boost navigation.
