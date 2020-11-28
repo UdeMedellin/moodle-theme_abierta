@@ -60,20 +60,23 @@ if ($coursepresentation == 2) {
 }
 
 // Special format to the course name.
-$coursename = $PAGE->course->fullname;
-$m = explode(' ', $coursename);
+$coursename = '';
+if ($PAGE->course->id != SITEID) {
+    $coursename = $PAGE->course->fullname;
+    $m = explode(' ', $coursename);
 
-$first = '';
-$last = '';
-foreach ($m as $k => $n) {
-    if ($k < (count($m) / 2)) {
-        $first .= $n . ' ';
-    } else {
-        $last .= $n . ' ';
+    $first = '';
+    $last = '';
+    foreach ($m as $k => $n) {
+        if ($k < (count($m) / 2)) {
+            $first .= $n . ' ';
+        } else {
+            $last .= $n . ' ';
+        }
     }
-}
 
-$coursename = $first . '<span>' . $last . '</span>';
+    $coursename = $first . '<span>' . $last . '</span>';
+}
 // End
 
 $globalvars = new stdClass();
