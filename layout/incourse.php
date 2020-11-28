@@ -62,6 +62,23 @@ if (isset($PAGE->cm->modname) && in_array($PAGE->cm->modname, $moduleswithnavinb
     $extraclasses = [];
 }
 
+// Special format to the course name.
+$coursename = $PAGE->course->fullname;
+$m = explode(' ', $coursename);
+
+$first = '';
+$last = '';
+foreach ($m as $k => $n) {
+    if ($k < (count($m) / 2)) {
+        $first .= $n . ' ';
+    } else {
+        $last .= $n . ' ';
+    }
+}
+
+$coursename = $first . '<span>' . $last . '</span>';
+// End
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
@@ -77,7 +94,7 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'contentblocks' => $blockscontenthtml,
     'hascontentblocks' => $hascontentblocks,
-    'coursename' => $PAGE->course->fullname
+    'coursename' => $coursename
 ];
 
 // Improve boost navigation.

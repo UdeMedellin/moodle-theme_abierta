@@ -59,6 +59,23 @@ if ($coursepresentation == 2) {
     $extraclasses[] = 'coursepresentation-cover';
 }
 
+// Special format to the course name.
+$coursename = $PAGE->course->fullname;
+$m = explode(' ', $coursename);
+
+$first = '';
+$last = '';
+foreach ($m as $k => $n) {
+    if ($k < (count($m) / 2)) {
+        $first .= $n . ' ';
+    } else {
+        $last .= $n . ' ';
+    }
+}
+
+$coursename = $first . '<span>' . $last . '</span>';
+// End
+
 $globalvars = new stdClass();
 $globalvars->courseid = $PAGE->course->id;
 
@@ -78,7 +95,7 @@ $templatecontext = [
     'globalvars' => $globalvars,
     'contentblocks' => $blockscontenthtml,
     'hascontentblocks' => $hascontentblocks,
-    'coursename' => $PAGE->course->fullname
+    'coursename' => $coursename
 ];
 
 // Improve boost navigation.

@@ -55,17 +55,18 @@
     <div id="page" class="container-fluid">
         {{{ output.full_header }}}
 
+        {{#hasregionmainsettingsmenu}}
+            <div id="region-main-settings-menu" class="hidden-print">
+                <div> {{{ output.region_main_settings_menu }}} </div>
+            </div>
+        {{/hasregionmainsettingsmenu}}
+
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-xs-12">
-                {{#hasregionmainsettingsmenu}}
-                    <div id="region-main-settings-menu" class="hidden-print">
-                        <div> {{{ output.region_main_settings_menu }}} </div>
-                    </div>
-                {{/hasregionmainsettingsmenu}}
                 <section id="region-main" class="{{#hascontentblocks}}hascontentblocks{{/hascontentblocks}}">
                     <div class="coursebanner-box">
                         {{#coursename}}
-                            <span class="coursetitle">{{coursename}}</span>
+                            <span class="coursetitle">{{{coursename}}}</span>
                         {{/coursename}}
                     </div>
 
