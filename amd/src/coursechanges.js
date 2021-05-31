@@ -439,6 +439,20 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
 
             });
 
+            // ==============================================================================================
+            // Mouseover
+            // ==============================================================================================
+            $('.tepuy-mouse-over').on('mouseover', function(){
+                var $this = $(this);
+                var $popup = $($this.data('ref'));
+                $popup.show();
+            });
+
+            $('.tepuy-mouse-over').on('mouseout', function(){
+                var $this = $(this);
+                var $popup = $($this.data('ref'));
+                $popup.hide();
+            });
         }
     };
 });

@@ -125,3 +125,18 @@ $string['statslink_desc'] = 'The Statistic item URL';
 $string['statscontent'] = 'Statistic content';
 $string['statscontent_desc'] = 'The Text about the statistic';
 $string['statstitle'] = 'Estadísticas';
+
+// To block_ludifica
+$string['numpoints'] = 'Puntos';
+$string['numcoins'] = 'UVits';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';
+$string[''] = '';

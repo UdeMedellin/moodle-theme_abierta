@@ -1,0 +1,213 @@
+.block_ludifica {
+    .tab-profile {
+        background: url('[[pix:theme|block_ludifica/back_home_desktop]]') no-repeat center center;
+        background-size: cover;
+
+        .player_info {
+            position: relative;
+
+            .playerstats {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                display: flex;
+                text-align: center;
+                background-color: rgba(15, 28, 55, 0.6);
+                padding: 3px 10px 0;
+                border: 1px solid #7BFAE3;
+                border-radius: 30px;
+
+                > span {
+
+                    padding: 0 10px;
+                    font-size: 11px;
+                    color: #7BFAE3;
+                    font-weight: 600;
+
+                    > i {
+                        display: block;
+                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
+                    }
+                }
+
+                .coins i {
+                    background-position: -83px -8px;
+                    width: 33px;
+                    height: 30px;
+                }
+
+                .points i {
+                    background-position: -11px -8px;
+                    width: 52px;
+                    height: 30px;
+                }
+            }
+
+            .detailscol {
+                margin-top: 50px;
+                margin-right: 150px;
+
+                h2 {
+                    background-color: #fff;
+                    font-size: 35px;
+                    color: #563DA0;
+                    text-align: center;
+                    border-radius: 30px;
+                    padding: 20px;
+                }
+
+                .tickets-box {
+                    margin-top: 20px;
+
+                    h3 {
+                        background-color: #00FFE5;
+                        font-size: 16px;
+                        color: #4020A0;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 5px;
+                        display: block;
+                    }
+
+                    > div {
+                        display: flex;
+
+                        .oneticket-container {
+                            position: relative;
+
+                            .oneticket {
+                                background-color: #00FFE5;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center center;
+                                font-weight: bold;
+                                font-size: 13px;
+                                color: #FFFFFF;
+                                border-radius: 15px;
+                                border: 1px solid #00FFE5;
+                            }
+
+                            .count {
+                                background-color: #DC476C;
+                                font-weight: bold;
+                                font-size: 13px;
+                                color: #FFFFFF;
+                                position: absolute;
+                                top: 0px;
+                                right: 0px;
+                                width: 20px;
+                                height: 20px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .store-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15, 28, 55, 0.6) url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -191px 0;
+            text-align: center;
+            padding: 40px 10px 0;
+            border: 1px solid #7bfae3;
+            border-radius: 20px;
+            width: 70px;
+            font-size: 12px;
+            color: #7bfae3;
+
+            &:hover {
+                filter: grayscale(1);
+            }
+        }
+    }
+
+    .card-body {
+        padding: 0!important;
+    }
+
+    .card-text {
+        margin: 0!important;
+    }
+
+    .popup {
+        display: none;
+        background-color: #fff;
+        font-size: 12px;
+        color: #4020A0;
+        border-radius: 3px;
+        padding: 3px 10px;
+        position: absolute;
+        bottom: -30px;
+
+        &::after {
+            content: "";
+            background-color: #fff;
+            border-right: 0;
+            border-bottom: 0;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -5px;
+            left: calc(50% - 5px);
+            height: 10px;
+            width: 10px;
+        }
+    }
+}
+
+#block_ludifica-store {
+    background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+
+    #tabs-box {
+        background-size: cover;
+        width: 429px;
+        height: 415px;
+        position: relative;
+        padding: 50px 100px;
+
+        &::before {
+            background: url('[[pix:theme|block_ludifica/store]]') no-repeat center top;
+            content: "";
+            position: absolute;
+            width: 429px;
+            height: 80px;
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            background: url('[[pix:theme|block_ludifica/store]]') no-repeat center bottom;
+            content: "";
+            position: absolute;
+            width: 429px;
+            height: 180px;
+            bottom: 0;
+            left: 0;
+        }
+
+        .store-tabs {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(15, 28, 55, 0.6);
+            text-align: center;
+            padding: 40px 10px 0;
+            border: 1px solid #fff;
+            height: 250px;
+
+            h5 {
+                font-weight: bold;
+                font-size: 35px;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
