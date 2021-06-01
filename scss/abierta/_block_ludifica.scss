@@ -5,10 +5,11 @@
 
         .player_info {
             position: relative;
+            margin-bottom: 60px;
 
             .playerstats {
                 position: absolute;
-                top: 5px;
+                top: 0;
                 right: 10px;
                 display: flex;
                 text-align: center;
@@ -44,16 +45,21 @@
             }
 
             .detailscol {
-                margin-top: 50px;
-                margin-right: 150px;
+                width: 90%;
+                margin: auto;
 
                 h2 {
                     background-color: #fff;
-                    font-size: 35px;
+                    font-size: 25px;
                     color: #563DA0;
                     text-align: center;
-                    border-radius: 30px;
-                    padding: 20px;
+                    border-radius: 20px;
+                    padding: 10px;
+
+                    input {
+                        width: 100%;
+                        max-width: 200px;
+                    }
                 }
 
                 .tickets-box {
@@ -160,16 +166,18 @@
     }
 }
 
+#block_ludifica-tickets,
 #block_ludifica-store {
     background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
     background-size: cover;
     display: flex;
-    flex-wrap: wrap;
     padding: 40px;
+    justify-content: space-between;
 
     #tabs-box {
         background-size: cover;
         width: 429px;
+        min-width: 429px;
         height: 415px;
         position: relative;
         padding: 50px 100px;
@@ -199,7 +207,7 @@
             flex-direction: column;
             background-color: rgba(15, 28, 55, 0.6);
             text-align: center;
-            padding: 40px 10px 0;
+            padding: 40px 30px 0;
             border: 1px solid #fff;
             height: 250px;
 
@@ -207,6 +215,473 @@
                 font-weight: bold;
                 font-size: 35px;
                 color: #FFFFFF;
+                margin-top: 10px;
+                border-bottom: 1px solid #fff;
+                text-transform: uppercase;
+            }
+
+            > a {
+                font-size: 12px;
+                border-radius: 15px;
+                color: #fff;
+                border: 1px solid #fff;
+                background-color: transparent;
+                margin-top: 5px;
+                width: 70%;
+                text-align: left;
+                padding: 3px 0 3px 20px;
+                transition: all .2s ease-in-out;
+
+                &:hover, &.active {
+                    color: #4020A0;
+                    border: 1px solid #7bfae3;
+                    background-color: #7bfae3;
+                    width: 100%;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    #tickets-box,
+    #avatars-box {
+        position: relative;
+        margin-left: 20px;
+        padding-left: 20px;
+        flex-grow: 2;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 20%;
+            bottom: 20%;
+            border: 1px solid #FFFFFF;
+        }
+
+        .internaltitle {
+            text-align: right;
+
+            h5 {
+                font-weight: bold;
+                font-size: 35px;
+                color: #FFFFFF;
+                margin-top: 10px;
+                border-bottom: 1px solid #fff;
+                text-transform: uppercase;
+                display: inline;
+            }
+        }
+
+    }
+}
+
+#block_ludifica-store {
+    #avatars-box {
+        #avatars-list {
+            max-height: 350px;
+            margin-top: 20px;
+            overflow: auto;
+
+            .oneavatar {
+                width: 150px;
+                margin: 20px;
+                background-color: #fff;
+                border-radius: 40px;
+                border: 1px solid #fff;
+                position: relative;
+
+                &:hover .info-box {
+                    transform: scale(1);
+                    border-radius: 40px;
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+
+                    a {
+                        color: #7bfae3;
+                        font-style: italic;
+                        padding: 0;
+                    }
+
+                    .btn {
+
+                        i {
+                            color: #502585;
+                            font-weight: bold;
+                            font-size: 18px;
+                        }
+
+                        &.danger i {
+                            color: #a9291b
+                        }
+
+                        &:hover i {
+                            color: #000;
+                        }
+                    }
+
+                    .avatardescription {
+                        overflow: auto;
+                        top: 0;
+                        position: absolute;
+                        bottom: 39px;
+                        margin: 0;
+                        padding: 10px 5px;
+                    }
+
+                    .buttons-manager {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        text-align: center;
+                        background-color: #fff;
+                        display: flex;
+                        padding: 3px 10px 0;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        button {
+                            padding: 0;
+                        }
+                    }
+                }
+
+                &.inuse {
+                    .used {
+                        z-index: 2;
+                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -344px -5px;
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+
+                .avatarcontent {
+                    background-color: #4B4099;
+                    border-radius: 40px;
+
+                    .cost {
+                        bottom: 5px;
+                        top: unset;
+                        left: 0;
+                        right: 0;
+                        text-align: center;
+                        background-color: transparent;
+                        color: #7bfae3;
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+                }
+
+                .avatarfooter {
+                    overflow: hidden;
+                    border-radius: 0 0 40px 40px;
+
+                    .avatarname {
+                        font-style: italic;
+                        font-weight: bold;
+                        font-size: 18px;
+                        color: #4020A0;
+                        text-align: center;
+                        margin: 5px 0;
+                    }
+
+                    .notenabledalert {
+                        background-color: #cc355c;
+                        font-weight: bold;
+                        font-size: 11px;
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 8px;
+                        margin-bottom: 5px;
+
+                        i {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#block_ludifica-tickets {
+    #tickets-box {
+        #tickets-list {
+            margin-top: 20px;
+            overflow: auto;
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 350px;
+
+            .oneticket {
+                background-color: #fff;
+                margin: 0 20px 20px 0;
+                border-radius: 40px;
+                padding: 0;
+                max-width: 450px;
+                min-width: 350px;
+                position: relative;
+
+                .ticketcontent {
+                    padding: 10px;
+                    font-size: 11px;
+
+                    .leftcol {
+                        width: 110px;
+                        padding-right: 10px;
+
+                        .picture-box {
+                            border: 2px solid #7bfae3;
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 30px;
+                            background-size: cover;
+                            margin: 0 0 10px 0;
+                            background-position: center;
+                            position: relative;
+
+                            .count {
+                                background-color: #DC476C;
+                                font-weight: bold;
+                                font-size: 13px;
+                                color: #FFFFFF;
+                                position: absolute;
+                                top: 0px;
+                                right: 0px;
+                                width: 20px;
+                                height: 20px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                            }
+
+                            .cost {
+                                position: absolute;
+                                bottom: 0;
+                                top: unset;
+                                left: 0;
+                                right: 0;
+                                text-align: center;
+                                color: #7bfae3;
+                                font-size: 18px;
+                                font-weight: bold;
+                                background-color: rgba(15, 28, 55, 0.6);
+                                border-radius: 0 0 30px 30px;
+                            }
+                        }
+                    }
+
+                    .ticketinfo {
+
+                        h3 {
+                            font-size: 20px;
+                            color: #4020A0;
+                        }
+
+                        .moreinfo-ticket {
+                            position: absolute;
+                            right: 20px;
+                            top: 5px;
+                            cursor: pointer;
+
+                            i {
+                                color: #4DB8D9;
+
+                                &:hover {
+                                    color: #000;
+                                }
+                            }
+                        }
+
+                        .ticketdescription {
+                            max-height: 100px;
+                            overflow: auto;
+                        }
+                    }
+
+                    .ticketoptions {
+                        border: 1px solid #ccc;
+                        padding: 10px 5px;
+                        border-radius: 20px;
+                        margin: 10px 0 0;
+                        width: 100%;
+                    }
+                }
+
+                .ticketfooter {
+                    text-align: right;
+                    padding: 5px 20px;
+
+                    .btn {
+                        padding: 2px 10px;
+                    }
+                }
+
+                .notenabledalert {
+                    background-color: #cc355c;
+                    font-weight: bold;
+                    font-size: 11px;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 8px;
+                    margin: 0 auto 5px;
+                    max-width: 90%;
+
+                    i {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Independent because is loaded into a dialogue. */
+.modal-dialog {
+    .codeslist {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            background-color: #EFF0F7;
+            color: #646363;
+            border-radius: 10px;
+            padding: 3px 10px;
+            text-align: center;
+            margin-bottom: 5px;
+            font-style: italic;
+            font-size: 15px;
+
+            em {
+                font-size: 10px;
+                color: #CC355C;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .moreinfo {
+        font-size: 12px;
+        color: #604BA0;
+
+        h3 {
+            font-weight: normal;
+            font-size: 17px;
+            color: #715CAD;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}
+
+.block_ludifica {
+    .block_ludifica-content.MD {
+
+        .player_info {
+            margin-bottom: 0;
+
+            .playerstats {
+                top: 5px;
+            }
+
+            .detailscol {
+                margin: 50px 70px 0 0;
+                width: auto;
+
+                h2 {
+                    font-size: 30px;
+                    border-radius: 30px;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    #page-blocks-ludifica-tickets,
+    #page-blocks-ludifica-avatars {
+        #region-main {
+            padding: 0;
+            background: #DDDDF5;
+            border-radius: 40px;
+
+            > .card {
+                padding: 0;
+            }
+        }
+    }
+
+    #block_ludifica-tickets,
+    #block_ludifica-store {
+        flex-wrap: wrap;
+        padding: 0;
+        background: transparent;
+
+        #tabs-box {
+            min-width: unset;
+            width: 100%;
+            padding: 50px 60px;
+            background: #C1C1EB url('[[pix:theme|block_ludifica/back_store_mobile]]') no-repeat center center;
+            background-size: 90%;
+            border-radius: 40px;
+
+            &::before {
+                width: 340px;
+                top: 10px;
+            }
+
+            &::after {
+                width: 340px;
+            }
+
+        }
+
+        #tickets-box,
+        #avatars-box {
+            margin: 0;
+            padding: 0 5px;
+
+           .internaltitle {
+                text-align: center;
+                margin-top: 20px;
+
+                h5 {
+                    font-weight: bold;
+                    font-size: 24px;
+                    color: #4B4B8C;
+                    text-align: center;
+                    border-color: #4b4b8c;
+                }
+            }
+        }
+    }
+
+    #block_ludifica-store {
+        #avatars-box {
+            #avatars-list {
+                max-height: unset;
+                justify-content: space-evenly;
+
+                .oneavatar {
+                    margin: 10px;
+                }
+            }
+        }
+    }
+
+    #block_ludifica-tickets {
+        #tickets-box {
+            #tickets-list {
+                max-height: unset;
             }
         }
     }

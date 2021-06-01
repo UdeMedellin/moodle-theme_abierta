@@ -137,3 +137,45 @@ i, em {
         text-decoration: underline;
     }
 }
+
+/**Dialogue control*/
+.modal.show .modal-dialog {
+    outline: none;
+}
+
+.modal-content,
+.moodle-dialogue-base .moodle-dialogue-wrap.moodle-dialogue-content {
+    border-radius: 20px;
+
+    .modal-title,
+    .moodle-dialogue-hd h1 {
+        font-size: 27px;
+        color: #4020A0;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    h4 {
+        color: #715CAD;
+        margin: 10px 5px 5px;
+        text-align: center;
+        font-size: 17px;
+    }
+}
+
+.modal-header,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd {
+    border: none;
+    padding: 5px 0 0;
+}
+
+.moodle-dialogue-base button.closebutton,
+.close:not(:disabled):not(.disabled):hover,
+.moodle-dialogue-base .closebutton:hover:not(.disabled):not(:disabled),
+.close:not(:disabled):not(.disabled):focus,
+.moodle-dialogue-base .closebutton:focus:not(.disabled):not(:disabled) {
+    background: transparent;
+    outline: none;
+}

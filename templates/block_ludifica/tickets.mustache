@@ -1,0 +1,130 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_ludifica/tickets
+
+    This template renders the template content area for a resource.
+
+    Example context (json):
+    {
+        "tickets": [],
+        "baseurl": "https://moodle_wwwroot_url"
+    }
+}}
+
+<div id="block_ludifica-tickets">
+
+    <div id="tabs-box">
+    {{>block_ludifica/storetabs}}
+    </div>
+
+    <div id="tickets-box">
+        <div class="internaltitle">
+            <h5> {{#str}} store, block_ludifica {{/str}} </h5>
+        </div>
+        <div id="tickets-list">
+        {{#tickets}}
+            <div id="ticket-{{id}}" class="oneticket">
+                <div>
+                    <div class="ticketcontent">
+                        {{#thumbnail}}
+                        <div class="leftcol">
+                            <div class="picture-box" style="background-image: url({{thumbnail}});" title="{{name}}">
+                                <div class="count"><val key="usertickets">{{userticketscount}}</val></div>
+                                <div class="cost">{{#str}} numcoins, block_ludifica, {{cost}}{{/str}}</div>
+                            </div>
+                        </div>
+                        {{/thumbnail}}
+                        <div class="ticketinfo">
+                            <h3>
+                                {{name}}
+                                <a class="moreinfo-ticket" data-action="showmore" data-id="{{id}}">
+                                    <i class="fa fa-info-circle" title="{{#str}} moreinfo, block_ludifica {{/str}}"></i>
+                                </a>
+                            </h3>
+                            <div class="info-box">
+                                <div class="ticketdescription">
+                                    {{description}}
+                                </div>
+
+                                <div class="ticketoptions">
+                                    <strong>{{#str}} availabledate, block_ludifica {{/str}}</strong> {{availabledateformated}}<br />
+                                    <strong>{{#str}} ticketbyuser, block_ludifica {{/str}}</strong> {{byuser}}<br />
+                                    {{#hascompliancecaptions}}
+                                        <strong>{{#str}} requiretext, block_ludifica {{/str}}</strong> {{{compliancecaption}}}<br />
+                                    {{/hascompliancecaptions}}
+                                    <strong>{{#str}} available, block_ludifica {{/str}}</strong> <val key="available">{{available}}</val><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="moreinfo-ticket-{{id}}" title="{{name}}" style="display: none;">
+                        <div id="moreinfo-ticket-content-{{id}}">
+                            <div class="usertickets" {{^usertickets}}style="display: none;"{{/usertickets}}>
+                                <h4>{{#str}} usercodes, block_ludifica {{/str}} </h4>
+                                <ul class="codeslist">
+                                {{#usertickets}}
+                                    <li>
+                                        <span class="usercode {{#timeusedformatted}}usercode-used{{/timeusedformatted}}">{{usercode}}</span>
+                                        {{#timeusedformatted}}<em>{{#str}} usedat, block_ludifica, {{timeusedformatted}} {{/str}}</em>{{/timeusedformatted}}
+                                    </li>
+                                {{/usertickets}}
+                                </ul>
+                            </div>
+
+                            {{#moreinfo}}
+                                <div class="moreinfo">
+                                    <h3>{{#str}} moreinfo, block_ludifica {{/str}} </h3>
+                                    {{{moreinfo}}}
+                                </div>
+                            {{/moreinfo}}
+                        </div>
+                    </div>
+                    <div class="ticketfooter">
+                        <button type="button" class="btn btn-primary" data-action="buy" data-id="{{id}}" {{^enabled}}style="display: none"{{/enabled}}>
+                            {{#str}} buy, block_ludifica {{/str}}
+                        </button>
+                        <button type="button" class="btn btn-primary" data-action="give" data-id="{{id}}" {{^cangive}}style="display: none"{{/cangive}}>
+                            {{#str}} give, block_ludifica {{/str}}
+                        </button>
+                        {{#canedit}}
+                            <a href="{{baseurl}}/blocks/ludifica/ticket_edit.php?id={{id}}" class="btn btn-primary">{{#str}} edit {{/str}}</a>
+                            <a href="{{baseurl}}/blocks/ludifica/tickets.php?delete={{id}}&sesskey={{sesskey}}" class="btn btn-danger">{{#str}} delete {{/str}}</a>
+                        {{/canedit}}
+                    </div>
+
+                    {{#notenabledtext}}
+                    <div class="notenabledalert">
+                        <i class="fa fa-exclamation-triangle"></i> {{notenabledtext}}
+                    </div>
+                    {{/notenabledtext}}
+                </div>
+            </div>
+        {{/tickets}}
+        {{^tickets}}
+            <p>
+                {{#str}} notickets, block_ludifica {{/str}}
+            </p>
+        {{/tickets}}
+        </div>
+        {{#canedit}}
+        <div>
+            <a href="{{baseurl}}/blocks/ludifica/ticket_edit.php" class="btn btn-primary">{{#str}} newticket, block_ludifica {{/str}}</a>
+        </div>
+        {{/canedit}}
+    </div>
+</div>

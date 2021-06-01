@@ -32,59 +32,71 @@
     {{>block_ludifica/storetabs}}
     </div>
 
-    <div id="avatars-list" class="row">
-    {{#avatars}}
-        <div id="avatar-{{id}}" class="oneavatar {{^userhas}}usernothas{{/userhas}} {{#userhas}}userhas{{/userhas}} {{#inuse}}inuse{{/inuse}}">
-            <div class="card">
-                <strong class="card-header">
-                    <i class="fa fa-check-circle used"></i> {{name}}
-                </strong>
-                <div class="avatarcontent">
-                    <div class="picture-box">
-                        <img src="{{uri}}" alt="{{name}}" />
-                        <div class="cost">
-                            {{#str}} numcoins, block_ludifica, {{cost}} {{/str}}</strong>
+    <div id="avatars-box">
+        <div class="internaltitle">
+            <h5> {{#str}} store, block_ludifica {{/str}} </h5>
+        </div>
+        <div id="avatars-list" class="row">
+        {{#avatars}}
+            <div id="avatar-{{id}}" class="oneavatar {{^userhas}}usernothas{{/userhas}} {{#userhas}}userhas{{/userhas}} {{#inuse}}inuse{{/inuse}}">
+                <div>
+                    <i class="used"></i>
+                    <div class="avatarcontent">
+                        <div class="picture-box">
+                            <img src="{{uri}}" alt="{{name}}" />
+                            <div class="cost">
+                                {{#str}} numcoins, block_ludifica, {{cost}} {{/str}}</strong>
+                            </div>
                         </div>
                     </div>
                     <div class="info-box">
-                        <p>
+                        <div class="avatardescription">
                             {{description}}
-                        </p>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    {{#notenabledtext}}
-                    <div class="alert alert-dismissible alert-danger">
-                        {{notenabledtext}}
-                    </div>
-                    {{/notenabledtext}}
-                    {{^notenabledtext}}
-                        {{^userhas}}
-                            <button type="button" class="btn btn-primary" data-action="buy" data-id="{{id}}">
-                                {{#str}} buy, block_ludifica {{/str}}
+                        </div>
+                        <div class="buttons-manager">
+                        {{^notenabledtext}}
+                            {{^userhas}}
+                                <button type="button" class="btn" data-action="buy" data-id="{{id}}" title="{{#str}} buy, block_ludifica {{/str}}">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button>
+                            {{/userhas}}
+                            <button type="button" class="btn" data-action="use" data-id="{{id}}" title="{{#str}} use, block_ludifica {{/str}}">
+                                <i class="fa fa-address-card"></i>
                             </button>
-                        {{/userhas}}
-                        <button type="button" class="btn btn-primary" data-action="use" data-id="{{id}}">
-                            {{#str}} use, block_ludifica {{/str}}
-                        </button>
-                    {{/notenabledtext}}
-                    {{#canedit}}
-                        <a href="{{baseurl}}/blocks/ludifica/avatar_edit.php?id={{id}}" class="btn btn-primary">{{#str}} edit {{/str}}</a>
-                        <a href="{{baseurl}}/blocks/ludifica/avatars.php?delete={{id}}&sesskey={{sesskey}}" class="btn btn-danger">{{#str}} delete {{/str}}</a>
-                    {{/canedit}}
+                        {{/notenabledtext}}
+                        {{#canedit}}
+                            <a href="{{baseurl}}/blocks/ludifica/avatar_edit.php?id={{id}}" class="btn" title="{{#str}} edit {{/str}}">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="{{baseurl}}/blocks/ludifica/avatars.php?delete={{id}}&sesskey={{sesskey}}" class="btn danger" title="{{#str}} delete {{/str}}">
+                                <i class="fa fa-minus-circle"></i>
+                            </a>
+                        {{/canedit}}
+                        </div>
+                    </div>
+                    <div class="avatarfooter">
+                        <div class="avatarname">
+                            {{name}}
+                        </div>
+                        {{#notenabledtext}}
+                        <div class="notenabledalert">
+                            <i class="fa fa-exclamation-triangle"></i> {{notenabledtext}}
+                        </div>
+                        {{/notenabledtext}}
+                    </div>
                 </div>
             </div>
+        {{/avatars}}
+        {{^avatars}}
+            <p>
+                {{#str}} noavatars, block_ludifica {{/str}}
+            </p>
+        {{/avatars}}
         </div>
-    {{/avatars}}
-    {{^avatars}}
-        <p>
-            {{#str}} noavatars, block_ludifica {{/str}}
-        </p>
-    {{/avatars}}
+        {{#canedit}}
+        <div>
+            <a href="{{baseurl}}/blocks/ludifica/avatar_edit.php" class="btn btn-primary">{{#str}} avatarnew, block_ludifica {{/str}}</a>
+        </div>
+        {{/canedit}}
     </div>
-    {{#canedit}}
-    <div>
-        <a href="{{baseurl}}/blocks/ludifica/avatar_edit.php" class="btn btn-primary">{{#str}} avatarnew, block_ludifica {{/str}}</a>
-    </div>
-    {{/canedit}}
 </div>
