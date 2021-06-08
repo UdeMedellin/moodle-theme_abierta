@@ -28,13 +28,15 @@
 
 <div id="block_ludifica-store">
 
+    {{>block_ludifica/playerstats}}
+
     <div id="tabs-box">
     {{>block_ludifica/storetabs}}
     </div>
 
     <div id="avatars-box">
         <div class="internaltitle">
-            <h5> {{#str}} store, block_ludifica {{/str}} </h5>
+            <h5> {{#str}} avatars, block_ludifica {{/str}} </h5>
         </div>
         <div id="avatars-list" class="row">
         {{#avatars}}

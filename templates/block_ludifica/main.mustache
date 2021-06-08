@@ -42,19 +42,10 @@
 
     {{#player}}
     <div class="tab-profile block_ludifica-tabcontent {{profilestate}}">
+
+        {{>block_ludifica/playerstats}}
+
         <div class="player_info">
-            <div class="playerstats">
-                <span class="points tepuy-mouse-over" data-ref="#{{uniqueid}} .points .popup">
-                    <i></i>
-                    {{points}}
-                    <div class="popup">{{#str}} numpoints, theme_abierta {{/str}}</div>
-                </span>
-                <span class="coins tepuy-mouse-over" data-ref="#{{uniqueid}} .coins .popup">
-                    <i></i>
-                    {{coins}}
-                    <div class="popup">{{#str}} numcoins, theme_abierta {{/str}}</div>
-                </span>
-            </div>
             <div class="avatar-box">
                 <img src="{{avatarurl}}" alt="{{nickname}}" /><br />
             </div>
@@ -82,7 +73,10 @@
             </div>
 
         </div>
-        <a href="{{baseurl}}/blocks/ludifica/avatars.php" class="store-button">{{#str}} store, block_ludifica {{/str}}</a>
+        <div class="general-buttons">
+            <a href="{{baseurl}}/blocks/ludifica/avatars.php" class="avatars-button">{{#str}} avatars, block_ludifica {{/str}}</a>
+            <a href="{{baseurl}}/blocks/ludifica/tickets.php" class="store-button">{{#str}} store, block_ludifica {{/str}}</a>
+        </div>
     </div>
     {{/player}}
 

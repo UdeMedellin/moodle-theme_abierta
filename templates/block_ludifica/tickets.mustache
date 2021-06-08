@@ -28,13 +28,15 @@
 
 <div id="block_ludifica-tickets">
 
+    {{>block_ludifica/playerstats}}
+
     <div id="tabs-box">
     {{>block_ludifica/storetabs}}
     </div>
 
     <div id="tickets-box">
         <div class="internaltitle">
-            <h5> {{#str}} store, block_ludifica {{/str}} </h5>
+            <h5> {{#str}} tickets, block_ludifica {{/str}} </h5>
         </div>
         <div id="tickets-list">
         {{#tickets}}
@@ -46,6 +48,11 @@
                             <div class="picture-box" style="background-image: url({{thumbnail}});" title="{{name}}">
                                 <div class="count"><val key="usertickets">{{userticketscount}}</val></div>
                                 <div class="cost">{{#str}} numcoins, block_ludifica, {{cost}}{{/str}}</div>
+                            </div>
+
+                            <div class="ticketoptions">
+                                <div><strong>{{#str}} ticketbyuser, block_ludifica {{/str}}</strong> {{byuser}}</div>
+                                <div><strong>{{#str}} available, block_ludifica {{/str}}</strong> <val key="available">{{available}}</val></div>
                             </div>
                         </div>
                         {{/thumbnail}}
@@ -60,16 +67,8 @@
                                 <div class="ticketdescription">
                                     {{description}}
                                 </div>
-
-                                <div class="ticketoptions">
-                                    <strong>{{#str}} availabledate, block_ludifica {{/str}}</strong> {{availabledateformated}}<br />
-                                    <strong>{{#str}} ticketbyuser, block_ludifica {{/str}}</strong> {{byuser}}<br />
-                                    {{#hascompliancecaptions}}
-                                        <strong>{{#str}} requiretext, block_ludifica {{/str}}</strong> {{{compliancecaption}}}<br />
-                                    {{/hascompliancecaptions}}
-                                    <strong>{{#str}} available, block_ludifica {{/str}}</strong> <val key="available">{{available}}</val><br />
-                                </div>
                             </div>
+                            <strong>{{#str}} availabledate, block_ludifica {{/str}}</strong> {{availabledateformated}}<br />
                         </div>
                     </div>
                     <div id="moreinfo-ticket-{{id}}" title="{{name}}" style="display: none;">
@@ -85,6 +84,10 @@
                                 {{/usertickets}}
                                 </ul>
                             </div>
+
+                            {{#hascompliancecaptions}}
+                                <strong>{{#str}} requiretext, block_ludifica {{/str}}</strong> {{{compliancecaption}}}<br />
+                            {{/hascompliancecaptions}}
 
                             {{#moreinfo}}
                                 <div class="moreinfo">
