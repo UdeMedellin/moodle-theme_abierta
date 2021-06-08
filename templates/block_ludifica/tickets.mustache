@@ -50,10 +50,8 @@
                                 <div class="cost">{{#str}} numcoins, block_ludifica, {{cost}}{{/str}}</div>
                             </div>
 
-                            <div class="ticketoptions">
-                                <div><strong>{{#str}} ticketbyuser, block_ludifica {{/str}}</strong> {{byuser}}</div>
-                                <div><strong>{{#str}} available, block_ludifica {{/str}}</strong> <val key="available">{{available}}</val></div>
-                            </div>
+                            <strong>{{#str}} availabledate, block_ludifica {{/str}}</strong> <br /> {{availabledateformated}}<br />
+
                         </div>
                         {{/thumbnail}}
                         <div class="ticketinfo">
@@ -68,7 +66,11 @@
                                     {{description}}
                                 </div>
                             </div>
-                            <strong>{{#str}} availabledate, block_ludifica {{/str}}</strong> {{availabledateformated}}<br />
+
+                            <div class="ticketoptions">
+                                <div><strong>{{#str}} ticketbyuser, block_ludifica {{/str}}</strong> {{byuser}}</div>
+                                <div><strong>{{#str}} available, block_ludifica {{/str}}</strong> <val key="available">{{available}}</val></div>
+                            </div>
                         </div>
                     </div>
                     <div id="moreinfo-ticket-{{id}}" title="{{name}}" style="display: none;">
