@@ -43,16 +43,24 @@
     {{#player}}
     <div class="tab-profile block_ludifica-tabcontent {{profilestate}}">
 
+        {{#ownprofile}}
         {{>block_ludifica/playerstats}}
+        {{/ownprofile}}
 
         <div class="player_info">
             <div class="avatar-box">
                 <img src="{{avatarurl}}" alt="{{nickname}}" /><br />
             </div>
             <div class="detailscol">
-                <div>
+                <div class="nickname-box">
                     <h2>{{{nickcontent}}}</h2>
+                    {{^ownprofile}}
+                        <div class="profiledescription">
+                            {{{description}}}
+                        </div>
+                    {{/ownprofile}}
                 </div>
+                {{#ownprofile}}
                 <div class="tickets-box">
                     <h3> {{#str}} tickets, block_ludifica {{/str}} </h3>
                     <div>
@@ -70,6 +78,7 @@
                     {{/tickets}}
                     </div>
                 </div>
+                {{/ownprofile}}
             </div>
 
         </div>

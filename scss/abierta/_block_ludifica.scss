@@ -11,17 +11,26 @@
                 width: 90%;
                 margin: auto;
 
-                h2 {
+                .nickname-box {
                     background-color: #fff;
-                    font-size: 25px;
-                    color: #563DA0;
-                    text-align: center;
                     border-radius: 20px;
-                    padding: 10px;
+                    padding: 10px 30px;
+                    color: #563DA0;
 
-                    input {
-                        width: 100%;
-                        max-width: 200px;
+                    .profiledescription {
+                        max-height: 250px;
+                        overflow: auto;
+                    }
+
+                    h2 {
+                        font-size: 25px;
+                        text-align: center;
+                        color: #563DA0;
+
+                        input {
+                            width: 100%;
+                            max-width: 200px;
+                        }
                     }
                 }
 
@@ -654,6 +663,9 @@
 
 }
 
+#page-user-profile .userprofile .description {
+    display: none;
+}
 
 @media (max-width: 576px) {
 

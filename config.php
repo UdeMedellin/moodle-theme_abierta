@@ -133,4 +133,11 @@ $THEME->layouts = [
         'regions' => array(),
         'options' => array('nofooter' => true, 'nonavbar' => true),
     ),
+    // My public page.
+    'mypublic' => array(
+        'file' => 'course.php',
+        'regions' => array('side-pre', 'side-post', 'side-cont'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => false, 'langmenu' => true),
+    ),
 ];
