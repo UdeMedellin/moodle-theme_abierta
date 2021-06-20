@@ -613,7 +613,7 @@ class theme_abierta_core_renderer extends \theme_boost\output\core_renderer {
         }
 
         $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
-        $html .= html_writer::start_div('col-xs-12');
+        $html .= html_writer::start_div('col-12');
         $html .= html_writer::start_div('card');
         $html .= html_writer::start_div('card-block');
         if (empty($PAGE->layout_options['nonavbar'])) {
