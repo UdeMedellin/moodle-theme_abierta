@@ -59,6 +59,8 @@ if ($coursepresentation == 2) {
     $extraclasses[] = 'coursepresentation-cover';
 }
 
+$extraclasses[] = isloggedin() && !isguestuser() ? 'isloggedin': 'isnotloggedin';
+
 // Special format to the course name.
 $coursename = '';
 if ($PAGE->course->id != SITEID) {

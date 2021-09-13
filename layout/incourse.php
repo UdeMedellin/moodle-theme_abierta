@@ -54,6 +54,8 @@ if ($draweropenright && $hasblocks) {
     $extraclasses[] = 'drawer-open-right';
 }
 
+$extraclasses[] = isloggedin() && !isguestuser() ? 'isloggedin': 'isnotloggedin';
+
 $moduleswithnavinblocks = ['book', 'quiz'];
 
 if (isset($PAGE->cm->modname) && in_array($PAGE->cm->modname, $moduleswithnavinblocks)) {

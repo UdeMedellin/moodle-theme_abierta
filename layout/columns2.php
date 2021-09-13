@@ -49,6 +49,8 @@ if ($draweropenright && $hasblocks) {
     $extraclasses[] = 'drawer-open-right';
 }
 
+$extraclasses[] = isloggedin() && !isguestuser() ? 'isloggedin': 'isnotloggedin';
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
