@@ -1,5 +1,5 @@
 #top-footer {
-    background-color: #d1d5d8;
+    background-color: #e3e7f5;
     padding: 0;
 
     h3 {
@@ -37,7 +37,7 @@
 
 .footer_about {
     text-align: center;
-    background-color: #2a6d80;
+    background-color: linear-gradient(90deg,#4e4ec2,#8b95ff);
     padding: 10px 0;
     color: #fff;
 }
@@ -45,7 +45,7 @@
 #page-footer {
     text-align: center;
     min-height: inherit;
-    color: #585858;
+    color: #e3e7f5;
     background-color: $headings-color;
 
     a {

@@ -366,7 +366,7 @@ class theme_settings {
         $templatecontext['googlefont'] = $theme->settings->googlefont;
         $templatecontext['logourl'] = $logo;
         $templatecontext['sitename'] = $SITE->fullname;
-        $templatecontext['compact_logo'] = $OUTPUT->get_compact_logo_url(300, 100);
+        $templatecontext['compact_logo'] = $OUTPUT->get_compact_logo_url(550, 100);
 
         return $templatecontext;
     }
