@@ -37,7 +37,7 @@
 
 .footer_about {
     text-align: center;
-    background-color: linear-gradient(90deg,#4e4ec2,#8b95ff);
+    background: linear-gradient(90deg,#4e4ec2,#8b95ff);
     padding: 10px 0;
     color: #fff;
 }
@@ -45,7 +45,7 @@
 #page-footer {
     text-align: center;
     min-height: inherit;
-    color: #e3e7f5;
+    color: #585858;
     background-color: $headings-color;
 
     a {
