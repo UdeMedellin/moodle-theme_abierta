@@ -127,6 +127,7 @@ $string['statscontent_desc'] = 'The Text about the statistic';
 $string['statstitle'] = 'Estadísticas';
 
 // To block_ludifica
+$string['imgranking'] = 'Image decoration ranking';
 $string['numpoints'] = 'Puntos';
 $string['numcoins'] = 'UVits';
 $string[''] = '';
