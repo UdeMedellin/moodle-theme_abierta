@@ -5,7 +5,7 @@
     .ludifica_ranking {
         background-color: rgba(20, 16, 84, 0.75);
         border-radius: 40px;
-        border: 1px solid #00ffff;
+        border: 1px solid #0ff;
         max-width: 60%;
         margin: auto;
         margin-top: 50px;
@@ -166,8 +166,8 @@
                                 font-size: 13px;
                                 color: #fff;
                                 position: absolute;
-                                top: 0px;
-                                right: 0px;
+                                top: 0;
+                                right: 0;
                                 width: 20px;
                                 height: 20px;
                                 display: flex;
@@ -180,45 +180,125 @@
                 }
             }
         }
-
-        .general-buttons {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-
-            > a {
-                background: rgba(15, 28, 55, 0.6) url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
-                text-align: center;
-                padding: 40px 10px 0;
-                border: 1px solid #7bfae3;
-                border-radius: 20px;
-                width: 70px;
-                font-size: 12px;
-                color: #7bfae3;
-
-                &:hover {
-                    filter: grayscale(1);
-                }
-            }
-
-            .avatars-button {
-                background-position:  -123px 0;
-            }
-
-            .store-button {
-                background-position:  -195px 0;
-            }
-        }
     }
 
     .card-body {
-        padding: 0!important;
+        padding: 0 !important;
     }
 
     .card-text {
-        margin: 0!important;
+        margin: 0 !important;
     }
 }
+
+.block_ludifica-tabs {
+    display: none;
+}
+
+.general-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+
+    > a {
+        background: rgba(15, 28, 55, 0.6) url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
+        text-align: center;
+        padding: 40px 10px 0;
+        border: 1px solid #7bfae3;
+        border-radius: 20px;
+        width: 70px;
+        font-size: 12px;
+        color: #7bfae3;
+
+        &:hover {
+            filter: grayscale(1);
+        }
+    }
+
+    .avatars-button {
+        background-position: -173px 5px;
+    }
+
+    .store-button {
+        background-position: -238px 5px;
+    }
+
+    .ranking-button,
+    .ranking_course-button {
+        background-position: -441px 5px;
+        cursor: pointer;
+    }
+
+    .home-button {
+        background-position: -29px 5px;
+        cursor: pointer;
+    }
+}
+
+#block_ludifica-store {
+
+    .general-buttons {
+
+        .avatars-button {
+            filter: grayscale(1);
+            pointer-events: none;
+
+        }
+    }
+}
+
+#block_ludifica-tickets {
+
+    .general-buttons {
+
+        .store-button {
+            filter: grayscale(1);
+            pointer-events: none;
+        }
+    }
+}
+
+.tab-profile {
+
+    .general-buttons {
+
+        .home-button {
+            filter: grayscale(1);
+            pointer-events: none;
+
+        }
+    }
+}
+
+.tab-topbysite {
+
+    .general-buttons {
+
+        .ranking-button {
+            filter: grayscale(1);
+            pointer-events: none;
+
+        }
+    }
+}
+
+.block_ludifica-tabcontent {
+    min-height: 300px;
+}
+
+.tab-topbycourse {
+
+    .general-buttons {
+
+        .ranking_course-button {
+            filter: grayscale(1);
+            pointer-events: none;
+
+        }
+    }
+}
+
 
 @media (max-width: 940px) {
     .block_ludifica {
@@ -256,8 +336,6 @@
 
 #block_ludifica-tickets,
 #block_ludifica-store {
-    background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
-    background-size: cover;
     display: flex;
     padding: 40px;
     justify-content: space-between;
@@ -298,6 +376,7 @@
             padding: 40px 30px 0;
             border: 1px solid #fff;
             height: 250px;
+            max-width: 237px;
 
             h5 {
                 font-weight: bold;
@@ -320,7 +399,8 @@
                 padding: 3px 0 3px 20px;
                 transition: all .2s ease-in-out;
 
-                &:hover, &.active {
+                &:hover,
+                &.active {
                     color: #4020a0;
                     border: 1px solid #7bfae3;
                     background-color: #7bfae3;
@@ -336,6 +416,7 @@
     #avatars-box {
         position: relative;
         margin-left: 20px;
+        margin-bottom: 40px;
         padding-left: 20px;
         flex-grow: 2;
         margin-top: 40px;
@@ -406,7 +487,7 @@
                         }
 
                         &.danger i {
-                            color: #a9291b
+                            color: #a9291b;
                         }
 
                         &:hover i {
@@ -421,10 +502,13 @@
                         bottom: 39px;
                         margin: 0;
                         padding: 15px 10px;
-                        background-color: rgba(20,20,20,.8);
+                        background-color: rgba(20, 20, 20, .97);
                         border-radius: 40px;
                         display: flex;
                         align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
                     }
 
                     .buttons-manager {
@@ -457,6 +541,7 @@
                 .avatarcontent {
                     background-color: #4b4099;
                     border-radius: 40px;
+                    overflow: hidden;
 
                     .cost {
                         bottom: 5px;
@@ -474,6 +559,7 @@
                 .avatarfooter {
                     overflow: hidden;
                     border-radius: 0 0 40px 40px;
+                    padding: 8px;
 
                     .avatarname {
                         font-style: italic;
@@ -525,7 +611,8 @@
                     padding: 10px;
                     font-size: 11px;
 
-                    strong, em {
+                    strong,
+                    em {
                         color: #4020a0;
                     }
 
@@ -549,8 +636,8 @@
                                 font-size: 13px;
                                 color: #fff;
                                 position: absolute;
-                                top: 0px;
-                                right: 0px;
+                                top: 0;
+                                right: 0;
                                 width: 20px;
                                 height: 20px;
                                 display: flex;
@@ -607,7 +694,7 @@
                     }
 
                     .ticketoptions {
-                        padding: 0px 5px 0 0;
+                        padding: 0 5px 0 0;
                         margin: 10px 0 0;
                         width: 100%;
                         line-height: 12px;
@@ -694,7 +781,7 @@
         }
 
         .player_info {
-            margin-bottom: 0;
+            margin-bottom: 58px;
             margin-right: 153px;
             flex-wrap: nowrap;
 
@@ -747,13 +834,13 @@
         }
 
         .coins i {
-            background-position: -83px -8px;
+            background-position: -144px 0;
             width: 33px;
             height: 30px;
         }
 
         .points i {
-            background-position: -11px -8px;
+            background-position: -79px 0;
             width: 52px;
             height: 30px;
         }
@@ -786,6 +873,11 @@
 }
 
 .path-blocks-ludifica #region-main {
+    background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
+    background-size: cover;
+}
+
+.path-blocks-ludifica #region-main {
     > .card {
         padding: 0;
     }
@@ -796,7 +888,7 @@
     display: none;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 750px) {
 
     #page-blocks-ludifica-tickets,
     #page-blocks-ludifica-avatars {
@@ -838,10 +930,10 @@
 
         #tickets-box,
         #avatars-box {
-            margin: 0;
+            margin: 0 0 30px 0;
             padding: 0 5px;
 
-           .internaltitle {
+            .internaltitle {
                 text-align: center;
                 margin-top: 20px;
 
