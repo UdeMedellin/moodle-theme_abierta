@@ -370,6 +370,8 @@
     .block_ludifica {
 
         .ludifica_ranking {
+            margin-top: 50px;
+            margin-bottom: 130px;
 
             > div:last-child {
                 margin: auto;
@@ -378,12 +380,25 @@
             }
 
             > .ranking_decoration {
-                margin-top: -230px;
+                margin-top: -212px;
             }
 
             .generaltable {
                 margin-left: -15px;
             }
+        }
+
+        .general-buttons {
+
+            .home-button {
+                display: inline-block;
+                width: 60px;
+                background-position: -24px 5px;
+            }
+        }
+
+        .player_info {
+            margin-bottom: 120px;
         }
     }
 }
