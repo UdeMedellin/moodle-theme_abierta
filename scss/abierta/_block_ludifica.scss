@@ -55,27 +55,27 @@
                             color: #1ffff2;
                         }
                     }
- 
+
                     td {
                         padding: 5px;
- 
+
                         &:first-child {
                             text-align: center;
                             font-weight: bold;
                         }
- 
+
                         &:last-child {
                             text-align: center;
                             font-weight: bold;
                         }
                     }
                 }
- 
+
                 .current-user {
                     background: none !important;
- 
+
                     &:hover {
-    
+
                         td {
                             color: #fff;
                         }
@@ -86,11 +86,11 @@
                         color: #9e0045;
                         font-weight: bold;
                         border-top: 0;
-    
+
                         &:first-child {
                             border-radius: 15px 0 0 15px;
                         }
-    
+
                         &:last-child {
                             border-radius: 0 15px 15px 0;
                         }
@@ -212,25 +212,25 @@
             }
 
             .avatars-button {
-                background-position:  -123px 0;
+                background-position: -123px 0;
             }
 
             .store-button {
-                background-position:  -195px 0;
+                background-position: -195px 0;
             }
         }
     }
 
     .card-body {
-        padding: 0!important;
+        padding: 0 !important;
     }
 
     .card-text {
-        margin: 0!important;
+        margin: 0 !important;
     }
 
     .tab-topbysite,
-    .tab-topbycourse{
+    .tab-topbycourse {
         min-height: 320px;
     }
 
@@ -239,10 +239,6 @@
         font-size: 20px;
     }
 
-}
-
-.block_ludifica-tabs{
-    display: none;
 }
 
 .block_ludifica-tabs i {
@@ -255,11 +251,11 @@
 
 .block_with_controls {
 
-    .block_ludifica-tabs{
+    .block_ludifica-tabs {
         display: flex;
     }
 
-    .playerstats{
+    .playerstats {
         margin-top: 35px;
     }
     .block-controls {
@@ -268,13 +264,11 @@
     }
 }
 
-
-
 @media (max-width: 900px) {
     .block_ludifica {
 
         .ludifica_ranking {
-            
+
             > div:last-child {
                 margin: auto;
                 margin-top: 230px;
@@ -293,7 +287,7 @@
 @media (max-width: 1250px) {
 
     .drawer-open-left,
-    .drawer-open-right{
+    .drawer-open-right {
 
         .block_ludifica {
 
@@ -304,7 +298,7 @@
                     margin-top: 230px;
                     max-width: 90%;
                 }
-    
+
                 > .ranking_decoration {
                     margin: auto;
                     width: 100%;
@@ -317,7 +311,7 @@
 
 [data-region="blocks-column"] {
     .block_ludifica {
-        
+
         .ludifica_ranking {
 
             > div:last-child {
@@ -327,7 +321,6 @@
             }
 
             > .ranking_decoration {
-                margin-left: -11%;
                 margin-top: -230px;
             }
 
@@ -404,7 +397,8 @@
                 padding: 3px 0 3px 20px;
                 transition: all .2s ease-in-out;
 
-                &:hover, &.active {
+                &:hover,
+                &.active {
                     color: #4020a0;
                     border: 1px solid #7bfae3;
                     background-color: #7bfae3;
@@ -490,7 +484,7 @@
                         }
 
                         &.danger i {
-                            color: #a9291b
+                            color: #a9291b;
                         }
 
                         &:hover i {
@@ -505,7 +499,7 @@
                         bottom: 39px;
                         margin: 0;
                         padding: 15px 10px;
-                        background-color: rgba(20,20,20,.8);
+                        background-color: rgba(20, 20, 20, .8);
                         border-radius: 40px;
                         display: flex;
                         align-items: center;
@@ -609,7 +603,8 @@
                     padding: 10px;
                     font-size: 11px;
 
-                    strong, em {
+                    strong,
+                    em {
                         color: #4020a0;
                     }
 
