@@ -3,94 +3,104 @@
     background-size: cover;
 
     .ludifica_ranking {
-        background-color: rgba(20, 16, 84, 0.75);
-        border-radius: 40px;
-        border: 1px solid #00ffff;
-        max-width: 60%;
-        margin: auto;
-        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
         margin-bottom: 70px;
-        padding: 10px 50px;
+        padding-right: 15px;
 
         > .ranking_decoration {
-            width: 225px;
-            height: 234px;
+            min-width: 225px;
+            min-height: 234px;
             display: block;
             background: url('[[pix:theme|block_ludifica/ranking]]') no-repeat center center;
             position: absolute;
-            margin-left: -230px;
+            left: 4%;
+            z-index: 1;
         }
 
-        .generaltable {
-            color: #fff;
+        > div:last-child {
+            background-color: rgba(20, 16, 84, 0.75);
+            border-radius: 40px;
+            border: 1px solid #0ff;
+            max-width: 900px;
+            width: 100%;
+            min-width: 290px;
+            margin-left: 225px;
+            padding: 10px 40px 10px 70px;
 
-            th {
-                color: #1ffff2;
-                font-weight: bold;
-                font-size: 13px;
-                padding: 5px;
-                text-align: center;
-                border-top: 0;
+            .generaltable {
+                color: #fff;
 
-                &:nth-child(2) {
-                    font-size: 24px;
-                    text-align: left;
-                }
-            }
-
-            tr {
-
-                &:hover {
-
-                    td {
-                        color: #1ffff2;
-                    }
-                }
-
-                td {
-                    padding: 5px;
-
-                    &:first-child {
-                        text-align: center;
-                        font-weight: bold;
-                    }
-
-                    &:last-child {
-                        text-align: center;
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            .current-user {
-                background: none !important;
-
-                &:hover {
-
-                    td {
-                        color: #fff;
-                    }
-                }
-
-                td {
-                    background-color: #ffbd70 !important;
-                    color: #9e0045;
+                th {
+                    color: #1ffff2;
                     font-weight: bold;
+                    font-size: 13px;
+                    padding: 5px;
+                    text-align: center;
                     border-top: 0;
 
-                    &:first-child {
-                        border-radius: 15px 0 0 15px;
-                    }
-
-                    &:last-child {
-                        border-radius: 0 15px 15px 0;
+                    &:nth-child(2) {
+                        font-size: 24px;
+                        text-align: left;
                     }
                 }
-            }
 
-            .current-user + tr {
-                td {
-                    border-top: 0;
+                tr {
+
+                    &:hover {
+
+                        td {
+                            color: #1ffff2;
+                        }
+                    }
+ 
+                    td {
+                        padding: 5px;
+ 
+                        &:first-child {
+                            text-align: center;
+                            font-weight: bold;
+                        }
+ 
+                        &:last-child {
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                    }
+                }
+ 
+                .current-user {
+                    background: none !important;
+ 
+                    &:hover {
+    
+                        td {
+                            color: #fff;
+                        }
+                    }
+
+                    td {
+                        background-color: #ffbd70 !important;
+                        color: #9e0045;
+                        font-weight: bold;
+                        border-top: 0;
+    
+                        &:first-child {
+                            border-radius: 15px 0 0 15px;
+                        }
+    
+                        &:last-child {
+                            border-radius: 0 15px 15px 0;
+                        }
+                    }
+                }
+
+                .current-user + tr {
+                    td {
+                        border-top: 0;
+                    }
                 }
             }
         }
@@ -166,8 +176,8 @@
                                 font-size: 13px;
                                 color: #fff;
                                 position: absolute;
-                                top: 0px;
-                                right: 0px;
+                                top: 0;
+                                right: 0;
                                 width: 20px;
                                 height: 20px;
                                 display: flex;
@@ -218,18 +228,88 @@
     .card-text {
         margin: 0!important;
     }
+
+    .tab-topbysite,
+    .tab-topbycourse{
+        min-height: 320px;
+    }
+
+    .card-title {
+        color: #00ffe5;
+        font-size: 20px;
+    }
+
 }
 
-@media (max-width: 940px) {
+.block_ludifica-tabs{
+    display: none;
+}
+
+.block_ludifica-tabs i {
+    color: #fff;
+}
+
+.block_ludifica-tabs .active i {
+    color: #3d33a3;
+}
+
+.block_with_controls {
+
+    .block_ludifica-tabs{
+        display: flex;
+    }
+
+    .playerstats{
+        margin-top: 35px;
+    }
+    .block-controls {
+        background-color: white;
+        padding: 5px;
+    }
+}
+
+
+
+@media (max-width: 900px) {
     .block_ludifica {
 
         .ludifica_ranking {
-            margin-top: 230px;
-            max-width: 90%;
+            
+            > div:last-child {
+                margin: auto;
+                margin-top: 230px;
+                max-width: 90%;
+            }
 
             > .ranking_decoration {
                 margin: auto;
+                width: 100%;
                 margin-top: -230px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+
+    .drawer-open-left,
+    .drawer-open-right{
+
+        .block_ludifica {
+
+            .ludifica_ranking {
+
+                > div:last-child {
+                    margin: auto;
+                    margin-top: 230px;
+                    max-width: 90%;
+                }
+    
+                > .ranking_decoration {
+                    margin: auto;
+                    width: 100%;
+                    margin-top: -230px;
+                }
             }
         }
     }
@@ -237,10 +317,14 @@
 
 [data-region="blocks-column"] {
     .block_ludifica {
-
+        
         .ludifica_ranking {
-            margin-top: 230px;
-            max-width: 100%;
+
+            > div:last-child {
+                margin: auto;
+                margin-top: 230px;
+                max-width: 100%;
+            }
 
             > .ranking_decoration {
                 margin-left: -11%;
@@ -549,8 +633,8 @@
                                 font-size: 13px;
                                 color: #fff;
                                 position: absolute;
-                                top: 0px;
-                                right: 0px;
+                                top: 0;
+                                right: 0;
                                 width: 20px;
                                 height: 20px;
                                 display: flex;
@@ -607,7 +691,7 @@
                     }
 
                     .ticketoptions {
-                        padding: 0px 5px 0 0;
+                        padding: 0 5px 0 0;
                         margin: 10px 0 0;
                         width: 100%;
                         line-height: 12px;
@@ -841,7 +925,7 @@
             margin: 0;
             padding: 0 5px;
 
-           .internaltitle {
+            .internaltitle {
                 text-align: center;
                 margin-top: 20px;
 
