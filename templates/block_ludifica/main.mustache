@@ -89,24 +89,26 @@
         {{#hasrowstopbycourse}}
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
-            <table class="generaltable">
-                <thead>
-                    <tr>
-                        <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
-                        <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
-                        <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {{#topbycourse}}
-                    <tr class="{{#current}}current-user{{/current}}">
-                        <td class="numeric-cel">{{position}}</td>
-                        <td>{{nickname}}</td>
-                        <td class="numeric-cel">{{points}}</td>
-                    </tr>
-                {{/topbycourse}}
-                </tbody>
-            </table>
+            <div>
+                <table class="generaltable">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#topbycourse}}
+                        <tr class="{{#current}}current-user{{/current}}">
+                            <td class="numeric-cel">{{position}}</td>
+                            <td>{{nickname}}</td>
+                            <td class="numeric-cel">{{points}}</td>
+                        </tr>
+                    {{/topbycourse}}
+                    </tbody>
+                </table>
+            </div>
         </div>
         {{/hasrowstopbycourse}}
         {{^hasrowstopbycourse}}
@@ -123,24 +125,26 @@
         {{#hasrowstopbysite}}
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
-            <table class="generaltable">
-                <thead>
-                    <tr>
-                        <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
-                        <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
-                        <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {{#topbysite}}
-                    <tr class="{{#current}}current-user{{/current}}">
-                        <td class="numeric-cel">{{position}}</td>
-                        <td>{{nickname}}</td>
-                        <td class="numeric-cel">{{points}}</td>
-                    </tr>
-                {{/topbysite}}
-                </tbody>
-            </table>
+            <div>
+                <table class="generaltable">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#topbysite}}
+                        <tr class="{{#current}}current-user{{/current}}">
+                            <td class="numeric-cel">{{position}}</td>
+                            <td>{{nickname}}</td>
+                            <td class="numeric-cel">{{points}}</td>
+                        </tr>
+                    {{/topbysite}}
+                    </tbody>
+                </table>
+            </div>
         </div>
         {{/hasrowstopbysite}}
         {{^hasrowstopbysite}}
@@ -157,24 +161,26 @@
         {{#hasrowslastmonth}}
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
-            <table class="generaltable">
-                <thead>
-                    <tr>
-                        <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
-                        <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
-                        <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {{#lastmonth}}
-                    <tr class="{{#current}}current-user{{/current}}">
-                        <td class="numeric-cel">{{position}}</td>
-                        <td>{{nickname}}</td>
-                        <td class="numeric-cel">{{points}}</td>
-                    </tr>
-                {{/lastmonth}}
-                </tbody>
-            </table>
+            <div>
+                <table class="generaltable">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#lastmonth}}
+                        <tr class="{{#current}}current-user{{/current}}">
+                            <td class="numeric-cel">{{position}}</td>
+                            <td>{{nickname}}</td>
+                            <td class="numeric-cel">{{points}}</td>
+                        </tr>
+                    {{/lastmonth}}
+                    </tbody>
+                </table>
+            </div>
         </div>
         {{/hasrowslastmonth}}
         {{^hasrowslastmonth}}
