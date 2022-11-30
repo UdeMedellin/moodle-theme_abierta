@@ -55,27 +55,27 @@
                             color: #1ffff2;
                         }
                     }
- 
+
                     td {
                         padding: 5px;
- 
+
                         &:first-child {
                             text-align: center;
                             font-weight: bold;
                         }
- 
+
                         &:last-child {
                             text-align: center;
                             font-weight: bold;
                         }
                     }
                 }
- 
+
                 .current-user {
                     background: none !important;
- 
+
                     &:hover {
-    
+
                         td {
                             color: #fff;
                         }
@@ -86,11 +86,11 @@
                         color: #9e0045;
                         font-weight: bold;
                         border-top: 0;
-    
+
                         &:first-child {
                             border-radius: 15px 0 0 15px;
                         }
-    
+
                         &:last-child {
                             border-radius: 0 15px 15px 0;
                         }
@@ -268,7 +268,7 @@
         }
     
     .tab-topbysite,
-    .tab-topbycourse{
+    .tab-topbycourse {
         min-height: 320px;
     }
 }
@@ -321,10 +321,6 @@
 
 }
 
-.block_ludifica-tabs{
-    display: none;
-}
-
 .block_ludifica-tabs i {
     color: #fff;
 }
@@ -335,11 +331,11 @@
 
 .block_with_controls {
 
-    .block_ludifica-tabs{
+    .block_ludifica-tabs {
         display: flex;
     }
 
-    .playerstats{
+    .playerstats {
         margin-top: 35px;
     }
     .block-controls {
@@ -348,13 +344,11 @@
     }
 }
 
-
-
 @media (max-width: 900px) {
     .block_ludifica {
 
         .ludifica_ranking {
-            
+
             > div:last-child {
                 margin: auto;
                 margin-top: 230px;
@@ -373,7 +367,7 @@
 @media (max-width: 1250px) {
 
     .drawer-open-left,
-    .drawer-open-right{
+    .drawer-open-right {
 
         .block_ludifica {
 
@@ -384,7 +378,7 @@
                     margin-top: 230px;
                     max-width: 90%;
                 }
-    
+
                 > .ranking_decoration {
                     margin: auto;
                     width: 100%;
@@ -397,7 +391,7 @@
 
 [data-region="blocks-column"] {
     .block_ludifica {
-        
+
         .ludifica_ranking {
 
             > div:last-child {
@@ -407,7 +401,6 @@
             }
 
             > .ranking_decoration {
-                margin-left: -11%;
                 margin-top: -230px;
             }
 
