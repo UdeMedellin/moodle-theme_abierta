@@ -103,6 +103,12 @@
                     }
                 }
             }
+
+            .ludifica_help {
+                position: absolute;
+                margin-top: -36px;
+                z-index: 2;
+            }
         }
     }
 
@@ -188,6 +194,10 @@
                         }
                     }
                 }
+
+                .ludifica_help {
+                    margin-left: 100%;
+                }
             }
         }
 
@@ -238,6 +248,19 @@
             }
         }
     }
+
+    .avatar-box {
+
+        .ludifica_help {
+            margin-right: 80%;
+        }
+    }
+}
+
+.ludifica_help {
+    background: none;
+    border: none;
+    color: #fff;
 }
 
 .block_ludifica-tabs {
@@ -932,6 +955,13 @@
             width: 52px;
             height: 30px;
         }
+
+        .ludifica_help {
+            position: absolute;
+            margin-left: -40px;
+            margin-top: 15px;
+            z-index: 2;
+        }
     }
 
     .popup {
@@ -957,7 +987,6 @@
             width: 10px;
         }
     }
-
 }
 
 .path-blocks-ludifica #region-main {
@@ -969,7 +998,6 @@
     > .card {
         padding: 0;
     }
-
 }
 
 #page-user-profile .userprofile .description {
