@@ -13,10 +13,12 @@
         > .ranking_decoration {
             min-width: 225px;
             min-height: 234px;
+            margin-top: 50px;
             display: block;
             background: url('[[pix:theme|block_ludifica/ranking]]') no-repeat center center;
             position: absolute;
-            left: 4%;
+            top: 0;
+            right: 70%;
             z-index: 1;
         }
 
@@ -335,7 +337,8 @@
             > .ranking_decoration {
                 margin: auto;
                 width: 100%;
-                margin-top: -230px;
+                margin-top: 50px;
+                right: 0;
             }
         }
     }
@@ -357,9 +360,8 @@
                 }
 
                 > .ranking_decoration {
-                    margin: auto;
                     width: 100%;
-                    margin-top: -230px;
+                    right: 0;
                 }
             }
         }
@@ -370,7 +372,6 @@
     .block_ludifica {
 
         .ludifica_ranking {
-            margin-top: 50px;
             margin-bottom: 130px;
 
             > div:last-child {
@@ -380,7 +381,9 @@
             }
 
             > .ranking_decoration {
-                margin-top: -212px;
+                margin-left: -15px;
+                left: 15px;
+                right: 0;
             }
 
             .generaltable {
@@ -611,7 +614,7 @@
                 &.inuse {
                     .used {
                         z-index: 2;
-                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -344px -5px;
+                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -372px 0px;
                         width: 34px;
                         height: 34px;
                     }
@@ -960,16 +963,14 @@
 
 }
 
-.path-blocks-ludifica #region-main {
+#page-blocks-ludifica-avatars #region-main,
+#page-blocks-ludifica-tickets #region-main {
     background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
     background-size: cover;
-}
 
-.path-blocks-ludifica #region-main {
     > .card {
         padding: 0;
     }
-
 }
 
 #page-user-profile .userprofile .description {
