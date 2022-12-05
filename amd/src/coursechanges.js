@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
+define(['jquery'], function($) {
   'use strict';
 
     return {
@@ -236,7 +236,7 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
                                 if (data.entries && Object.keys(data.entries).length > 0) {
                                     var content = '';
 
-                                    Object.keys(data.entries).forEach(function(item, index) {
+                                    Object.keys(data.entries).forEach(function(item) {
                                         if (data.entries[item].definition) {
                                             content = data.entries[item].definition;
                                         }
@@ -347,7 +347,7 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
                     return;
                 }
 
-                $this.find('a').each(function(event) {
+                $this.find('a').each(function() {
                     this.removeAttribute('onclick');
                 });
 
@@ -378,7 +378,6 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
                         };
 
                         $iframe.on('hide', function() {
-                            console.log('SE OCULTó');
                         });
 
                         var $float_window = $('<div></div>');
@@ -452,6 +451,47 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
                 var $this = $(this);
                 var $popup = $($this.data('ref'));
                 $popup.hide();
+            });
+
+            // ==============================================================================================
+            // Ranking and home button
+            // ==============================================================================================
+
+            $('.block_ludifica-tabs').each(function() {
+                var $tabs = $(this);
+                var tabslist = [];
+                var $ranking = $('.ranking-button');
+                var $ranking_course = $('.ranking_course-button');
+                var $home = $('.home-button');
+
+                $tabs.find('[data-ref]').each(function() {
+                    var $tab = $(this);
+                    tabslist.push($tab);
+
+                    $ranking.on('click', function() {
+                        tabslist.forEach(one => {
+                            $(one.data('ref')).removeClass('active');
+                        });
+
+                        $(".tab-topbysite").addClass('active');
+                    });
+
+                    $home.on('click', function() {
+                        tabslist.forEach(one => {
+                            $(one.data('ref')).removeClass('active');
+                        });
+
+                        $(".tab-profile").addClass('active');
+                    });
+
+                    $ranking_course.on('click', function() {
+                        tabslist.forEach(one => {
+                            $(one.data('ref')).removeClass('active');
+                        });
+
+                        $(".tab-topbycourse").addClass('active');
+                    });
+                });
             });
         }
     };

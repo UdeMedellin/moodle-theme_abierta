@@ -79,12 +79,8 @@
                 </div>
                 {{/ownprofile}}
             </div>
-
         </div>
-        <div class="general-buttons">
-            <a href="{{baseurl}}/blocks/ludifica/avatars.php" class="avatars-button">{{#str}} avatars, block_ludifica {{/str}}</a>
-            <a href="{{baseurl}}/blocks/ludifica/tickets.php" class="store-button">{{#str}} store, block_ludifica {{/str}}</a>
-        </div>
+        {{>block_ludifica/buttonsbar}}
     </div>
     {{/player}}
 
@@ -120,6 +116,7 @@
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowstopbycourse}}
+        {{>block_ludifica/buttonsbar}}
     </div>
     {{/hastopbycourse}}
 
@@ -155,6 +152,7 @@
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowstopbysite}}
+        {{>block_ludifica/buttonsbar}}
     </div>
     {{/hastopbysite}}
 
@@ -190,6 +188,7 @@
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowslastmonth}}
+        {{>block_ludifica/buttonsbar}}
     </div>
     {{/haslastmonth}}
 </div>

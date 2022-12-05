@@ -13,10 +13,12 @@
         > .ranking_decoration {
             min-width: 225px;
             min-height: 234px;
+            margin-top: 50px;
             display: block;
             background: url('[[pix:theme|block_ludifica/ranking]]') no-repeat center center;
             position: absolute;
-            left: 4%;
+            top: 0;
+            right: 70%;
             z-index: 1;
         }
 
@@ -192,31 +194,11 @@
         }
 
         .general-buttons {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
 
-            > a {
-                background: rgba(15, 28, 55, 0.6) url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
-                text-align: center;
-                padding: 40px 10px 0;
-                border: 1px solid #7bfae3;
-                border-radius: 20px;
-                width: 70px;
-                font-size: 12px;
-                color: #7bfae3;
+            .home-button {
+                filter: grayscale(1);
+                pointer-events: none;
 
-                &:hover {
-                    filter: grayscale(1);
-                }
-            }
-
-            .avatars-button {
-                background-position: -123px 0;
-            }
-
-            .store-button {
-                background-position: -195px 0;
             }
         }
     }
@@ -229,24 +211,101 @@
         margin: 0 !important;
     }
 
-    .tab-topbysite,
-    .tab-topbycourse {
-        min-height: 320px;
-    }
-
     .card-title {
         color: #00ffe5;
         font-size: 20px;
     }
 
+    .block_ludifica-tabs i {
+        color: #fff;
+    }
+
+    .block_ludifica-tabs .active i {
+        color: #3d33a3;
+    }
+
+    .tab-topbysite,
+    .tab-topbycourse {
+        min-height: 320px;
+    }
+
+    .tab-topbysite {
+
+        .general-buttons {
+
+            .ranking-button {
+                filter: grayscale(1);
+                pointer-events: none;
+
+            }
+        }
+    }
 }
 
-.block_ludifica-tabs i {
-    color: #fff;
+.block_ludifica-tabs {
+    display: none;
 }
 
-.block_ludifica-tabs .active i {
-    color: #3d33a3;
+.general-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+
+    > a {
+        background: rgba(15, 28, 55, 0.6) url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
+        text-align: center;
+        padding: 40px 10px 0;
+        border: 1px solid #7bfae3;
+        border-radius: 20px;
+        width: 70px;
+        font-size: 12px;
+        color: #7bfae3;
+
+        &:hover {
+            filter: grayscale(1);
+        }
+    }
+
+    .avatars-button {
+        background-position: -173px 5px;
+    }
+
+    .store-button {
+        background-position: -238px 5px;
+    }
+
+    .ranking-button {
+        background-position: -441px 5px;
+        cursor: pointer;
+    }
+
+    .ranking_course-button {
+        background-position: -447px 5px;
+        cursor: pointer;
+    }
+
+
+    .home-button {
+        background-position: -29px 5px;
+        cursor: pointer;
+    }
+}
+
+.block_ludifica-tabcontent {
+    min-height: 300px;
+}
+
+.tab-topbycourse {
+
+    .general-buttons {
+
+        .ranking_course-button {
+            filter: grayscale(1);
+            pointer-events: none;
+
+        }
+    }
 }
 
 .block_with_controls {
@@ -278,7 +337,8 @@
             > .ranking_decoration {
                 margin: auto;
                 width: 100%;
-                margin-top: -230px;
+                margin-top: 50px;
+                right: 0;
             }
         }
     }
@@ -300,9 +360,8 @@
                 }
 
                 > .ranking_decoration {
-                    margin: auto;
                     width: 100%;
-                    margin-top: -230px;
+                    right: 0;
                 }
             }
         }
@@ -313,6 +372,7 @@
     .block_ludifica {
 
         .ludifica_ranking {
+            margin-bottom: 130px;
 
             > div:last-child {
                 margin: auto;
@@ -321,20 +381,33 @@
             }
 
             > .ranking_decoration {
-                margin-top: -230px;
+                margin-left: -15px;
+                left: 15px;
+                right: 0;
             }
 
             .generaltable {
                 margin-left: -15px;
             }
         }
+
+        .general-buttons {
+
+            .home-button {
+                display: inline-block;
+                width: 60px;
+                background-position: -24px 5px;
+            }
+        }
+
+        .player_info {
+            margin-bottom: 120px;
+        }
     }
 }
 
 #block_ludifica-tickets,
 #block_ludifica-store {
-    background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
-    background-size: cover;
     display: flex;
     padding: 40px;
     justify-content: space-between;
@@ -375,6 +448,7 @@
             padding: 40px 30px 0;
             border: 1px solid #fff;
             height: 250px;
+            max-width: 237px;
 
             h5 {
                 font-weight: bold;
@@ -414,6 +488,7 @@
     #avatars-box {
         position: relative;
         margin-left: 20px;
+        margin-bottom: 40px;
         padding-left: 20px;
         flex-grow: 2;
         margin-top: 40px;
@@ -445,6 +520,16 @@
 }
 
 #block_ludifica-store {
+
+    .general-buttons {
+
+        .avatars-button {
+            filter: grayscale(1);
+            pointer-events: none;
+
+        }
+    }
+
     #avatars-box {
         #avatars-list {
             max-height: 350px;
@@ -499,10 +584,13 @@
                         bottom: 39px;
                         margin: 0;
                         padding: 15px 10px;
-                        background-color: rgba(20, 20, 20, .8);
+                        background-color: rgba(20, 20, 20, .9);
                         border-radius: 40px;
                         display: flex;
                         align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
                     }
 
                     .buttons-manager {
@@ -526,7 +614,7 @@
                 &.inuse {
                     .used {
                         z-index: 2;
-                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -344px -5px;
+                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -372px 0px;
                         width: 34px;
                         height: 34px;
                     }
@@ -535,6 +623,7 @@
                 .avatarcontent {
                     background-color: #4b4099;
                     border-radius: 40px;
+                    overflow: hidden;
 
                     .cost {
                         bottom: 5px;
@@ -552,6 +641,7 @@
                 .avatarfooter {
                     overflow: hidden;
                     border-radius: 0 0 40px 40px;
+                    padding: 8px;
 
                     .avatarname {
                         font-style: italic;
@@ -582,6 +672,15 @@
 }
 
 #block_ludifica-tickets {
+
+    .general-buttons {
+
+        .store-button {
+            filter: grayscale(1);
+            pointer-events: none;
+        }
+    }
+
     #tickets-box {
         #tickets-list {
             margin-top: 20px;
@@ -773,7 +872,7 @@
         }
 
         .player_info {
-            margin-bottom: 0;
+            margin-bottom: 58px;
             margin-right: 153px;
             flex-wrap: nowrap;
 
@@ -826,13 +925,13 @@
         }
 
         .coins i {
-            background-position: -83px -8px;
+            background-position: -144px 0;
             width: 33px;
             height: 30px;
         }
 
         .points i {
-            background-position: -11px -8px;
+            background-position: -79px 0;
             width: 52px;
             height: 30px;
         }
@@ -864,18 +963,21 @@
 
 }
 
-.path-blocks-ludifica #region-main {
+#page-blocks-ludifica-avatars #region-main,
+#page-blocks-ludifica-tickets #region-main {
+    background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
+    background-size: cover;
+
     > .card {
         padding: 0;
     }
-
 }
 
 #page-user-profile .userprofile .description {
     display: none;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 750px) {
 
     #page-blocks-ludifica-tickets,
     #page-blocks-ludifica-avatars {
@@ -917,7 +1019,7 @@
 
         #tickets-box,
         #avatars-box {
-            margin: 0;
+            margin: 0 0 30px 0;
             padding: 0 5px;
 
             .internaltitle {
