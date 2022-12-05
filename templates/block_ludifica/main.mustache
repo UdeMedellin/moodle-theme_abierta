@@ -40,13 +40,12 @@
         </div>
     {{/hastabs}}
 
+    {{#ownprofile}}
+    {{>block_ludifica/playerstats}}
+    {{/ownprofile}}
+
     {{#player}}
     <div class="tab-profile block_ludifica-tabcontent {{profilestate}}">
-
-        {{#ownprofile}}
-        {{>block_ludifica/playerstats}}
-        {{/ownprofile}}
-
         <div class="player_info">
             <div class="avatar-box">
                 <img src="{{avatarurl}}" alt="{{nickname}}" /><br />
@@ -92,24 +91,29 @@
     {{#hastopbycourse}}
     <div class="tab-topbycourse block_ludifica-tabcontent {{topbycoursestate}}">
         {{#hasrowstopbycourse}}
-        <table class="generaltable">
-            <thead>
-                <tr>
-                    <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
-                    <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
-                    <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
-                </tr>
-            </thead>
-            <tbody>
-            {{#topbycourse}}
-                <tr class="{{#current}}current-user{{/current}}">
-                    <td class="numeric-cel">{{position}}</td>
-                    <td>{{nickname}}</td>
-                    <td class="numeric-cel">{{points}}</td>
-                </tr>
-            {{/topbycourse}}
-            </tbody>
-        </table>
+        <div class="ludifica_ranking">
+            <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
+            <div>
+                <table class="generaltable">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#topbycourse}}
+                        <tr class="{{#current}}current-user{{/current}}">
+                            <td class="numeric-cel">{{position}}</td>
+                            <td>{{nickname}}</td>
+                            <td class="numeric-cel">{{points}}</td>
+                        </tr>
+                    {{/topbycourse}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         {{/hasrowstopbycourse}}
         {{^hasrowstopbycourse}}
             <p>
@@ -122,24 +126,29 @@
     {{#hastopbysite}}
     <div class="tab-topbysite block_ludifica-tabcontent {{topbysitestate}}">
         {{#hasrowstopbysite}}
-        <table class="generaltable">
-            <thead>
-                <tr>
-                    <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
-                    <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
-                    <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
-                </tr>
-            </thead>
-            <tbody>
-            {{#topbysite}}
-                <tr class="{{#current}}current-user{{/current}}">
-                    <td class="numeric-cel">{{position}}</td>
-                    <td>{{nickname}}</td>
-                    <td class="numeric-cel">{{points}}</td>
-                </tr>
-            {{/topbysite}}
-            </tbody>
-        </table>
+        <div class="ludifica_ranking">
+            <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
+            <div>
+                <table class="generaltable">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#topbysite}}
+                        <tr class="{{#current}}current-user{{/current}}">
+                            <td class="numeric-cel">{{position}}</td>
+                            <td>{{nickname}}</td>
+                            <td class="numeric-cel">{{points}}</td>
+                        </tr>
+                    {{/topbysite}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         {{/hasrowstopbysite}}
         {{^hasrowstopbysite}}
             <p>
@@ -152,24 +161,29 @@
     {{#haslastmonth}}
     <div class="tab-lastmonth block_ludifica-tabcontent {{lastmonthstate}}">
         {{#hasrowslastmonth}}
-        <table class="generaltable">
-            <thead>
-                <tr>
-                    <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
-                    <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
-                    <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
-                </tr>
-            </thead>
-            <tbody>
-            {{#lastmonth}}
-                <tr class="{{#current}}current-user{{/current}}">
-                    <td class="numeric-cel">{{position}}</td>
-                    <td>{{nickname}}</td>
-                    <td class="numeric-cel">{{points}}</td>
-                </tr>
-            {{/lastmonth}}
-            </tbody>
-        </table>
+        <div class="ludifica_ranking">
+            <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
+            <div>
+                <table class="generaltable">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}positionhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}playerhead, block_ludifica{{/str}}</th>
+                            <th>{{#str}}pointshead, block_ludifica{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#lastmonth}}
+                        <tr class="{{#current}}current-user{{/current}}">
+                            <td class="numeric-cel">{{position}}</td>
+                            <td>{{nickname}}</td>
+                            <td class="numeric-cel">{{points}}</td>
+                        </tr>
+                    {{/lastmonth}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         {{/hasrowslastmonth}}
         {{^hasrowslastmonth}}
             <p>

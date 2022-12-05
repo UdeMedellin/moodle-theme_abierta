@@ -1,7 +1,112 @@
 .block_ludifica {
+    background: url('[[pix:theme|block_ludifica/back_home_desktop]]') no-repeat center center;
+    background-size: cover;
+
+    .ludifica_ranking {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 70px;
+        padding-right: 15px;
+
+        > .ranking_decoration {
+            min-width: 225px;
+            min-height: 234px;
+            display: block;
+            background: url('[[pix:theme|block_ludifica/ranking]]') no-repeat center center;
+            position: absolute;
+            left: 4%;
+            z-index: 1;
+        }
+
+        > div:last-child {
+            background-color: rgba(20, 16, 84, 0.75);
+            border-radius: 40px;
+            border: 1px solid #0ff;
+            max-width: 900px;
+            width: 100%;
+            min-width: 290px;
+            margin-left: 225px;
+            padding: 10px 40px 10px 70px;
+
+            .generaltable {
+                color: #fff;
+
+                th {
+                    color: #1ffff2;
+                    font-weight: bold;
+                    font-size: 13px;
+                    padding: 5px;
+                    text-align: center;
+                    border-top: 0;
+
+                    &:nth-child(2) {
+                        font-size: 24px;
+                        text-align: left;
+                    }
+                }
+
+                tr {
+
+                    &:hover {
+
+                        td {
+                            color: #1ffff2;
+                        }
+                    }
+
+                    td {
+                        padding: 5px;
+
+                        &:first-child {
+                            text-align: center;
+                            font-weight: bold;
+                        }
+
+                        &:last-child {
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .current-user {
+                    background: none !important;
+
+                    &:hover {
+
+                        td {
+                            color: #fff;
+                        }
+                    }
+
+                    td {
+                        background-color: #ffbd70 !important;
+                        color: #9e0045;
+                        font-weight: bold;
+                        border-top: 0;
+
+                        &:first-child {
+                            border-radius: 15px 0 0 15px;
+                        }
+
+                        &:last-child {
+                            border-radius: 0 15px 15px 0;
+                        }
+                    }
+                }
+
+                .current-user + tr {
+                    td {
+                        border-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .tab-profile {
-        background: url('[[pix:theme|block_ludifica/back_home_desktop]]') no-repeat center center;
-        background-size: cover;
 
         .player_info {
             position: relative;
@@ -15,7 +120,7 @@
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 10px 30px;
-                    color: #563DA0;
+                    color: #563da0;
 
                     .profiledescription {
                         max-height: 250px;
@@ -25,7 +130,7 @@
                     h2 {
                         font-size: 25px;
                         text-align: center;
-                        color: #563DA0;
+                        color: #563da0;
 
                         input {
                             width: 100%;
@@ -38,9 +143,9 @@
                     margin-top: 20px;
 
                     h3 {
-                        background-color: #00FFE5;
+                        background-color: #00ffe5;
                         font-size: 16px;
-                        color: #4020A0;
+                        color: #4020b0;
                         font-weight: 600;
                         text-align: center;
                         padding: 5px;
@@ -54,25 +159,25 @@
                             position: relative;
 
                             .oneticket {
-                                background-color: #00FFE5;
+                                background-color: #00ffe5;
                                 background-repeat: no-repeat;
                                 background-size: cover;
                                 background-position: center center;
                                 font-weight: bold;
                                 font-size: 13px;
-                                color: #FFFFFF;
+                                color: #fff;
                                 border-radius: 15px;
-                                border: 1px solid #00FFE5;
+                                border: 1px solid #00ffe5;
                             }
 
                             .count {
-                                background-color: #DC476C;
+                                background-color: #dc476c;
                                 font-weight: bold;
                                 font-size: 13px;
-                                color: #FFFFFF;
+                                color: #fff;
                                 position: absolute;
-                                top: 0px;
-                                right: 0px;
+                                top: 0;
+                                right: 0;
                                 width: 20px;
                                 height: 20px;
                                 display: flex;
@@ -107,21 +212,122 @@
             }
 
             .avatars-button {
-                background-position:  -123px 0;
+                background-position: -123px 0;
             }
 
             .store-button {
-                background-position:  -195px 0;
+                background-position: -195px 0;
             }
         }
     }
 
     .card-body {
-        padding: 0!important;
+        padding: 0 !important;
     }
 
     .card-text {
-        margin: 0!important;
+        margin: 0 !important;
+    }
+
+    .tab-topbysite,
+    .tab-topbycourse {
+        min-height: 320px;
+    }
+
+    .card-title {
+        color: #00ffe5;
+        font-size: 20px;
+    }
+
+}
+
+.block_ludifica-tabs i {
+    color: #fff;
+}
+
+.block_ludifica-tabs .active i {
+    color: #3d33a3;
+}
+
+.block_with_controls {
+
+    .block_ludifica-tabs {
+        display: flex;
+    }
+
+    .playerstats {
+        margin-top: 35px;
+    }
+    .block-controls {
+        background-color: white;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .block_ludifica {
+
+        .ludifica_ranking {
+
+            > div:last-child {
+                margin: auto;
+                margin-top: 230px;
+                max-width: 90%;
+            }
+
+            > .ranking_decoration {
+                margin: auto;
+                width: 100%;
+                margin-top: -230px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+
+    .drawer-open-left,
+    .drawer-open-right {
+
+        .block_ludifica {
+
+            .ludifica_ranking {
+
+                > div:last-child {
+                    margin: auto;
+                    margin-top: 230px;
+                    max-width: 90%;
+                }
+
+                > .ranking_decoration {
+                    margin: auto;
+                    width: 100%;
+                    margin-top: -230px;
+                }
+            }
+        }
+    }
+}
+
+[data-region="blocks-column"] {
+    .block_ludifica {
+
+        .ludifica_ranking {
+
+            > div:last-child {
+                margin: auto;
+                margin-top: 230px;
+                max-width: 100%;
+            }
+
+            > .ranking_decoration {
+                margin-top: -230px;
+            }
+
+            .generaltable {
+                margin-left: -15px;
+            }
+        }
     }
 }
 
@@ -173,7 +379,7 @@
             h5 {
                 font-weight: bold;
                 font-size: 35px;
-                color: #FFFFFF;
+                color: #fff;
                 margin-top: 10px;
                 border-bottom: 1px solid #fff;
                 text-transform: uppercase;
@@ -191,8 +397,9 @@
                 padding: 3px 0 3px 20px;
                 transition: all .2s ease-in-out;
 
-                &:hover, &.active {
-                    color: #4020A0;
+                &:hover,
+                &.active {
+                    color: #4020a0;
                     border: 1px solid #7bfae3;
                     background-color: #7bfae3;
                     width: 100%;
@@ -217,7 +424,7 @@
             left: -20px;
             top: 20%;
             bottom: 20%;
-            border: 1px solid #FFFFFF;
+            border: 1px solid #fff;
         }
 
         .internaltitle {
@@ -226,7 +433,7 @@
             h5 {
                 font-weight: bold;
                 font-size: 35px;
-                color: #FFFFFF;
+                color: #fff;
                 margin-top: 10px;
                 border-bottom: 1px solid #fff;
                 text-transform: uppercase;
@@ -277,7 +484,7 @@
                         }
 
                         &.danger i {
-                            color: #a9291b
+                            color: #a9291b;
                         }
 
                         &:hover i {
@@ -292,7 +499,7 @@
                         bottom: 39px;
                         margin: 0;
                         padding: 15px 10px;
-                        background-color: rgba(20,20,20,.8);
+                        background-color: rgba(20, 20, 20, .8);
                         border-radius: 40px;
                         display: flex;
                         align-items: center;
@@ -326,7 +533,7 @@
                 }
 
                 .avatarcontent {
-                    background-color: #4B4099;
+                    background-color: #4b4099;
                     border-radius: 40px;
 
                     .cost {
@@ -350,7 +557,7 @@
                         font-style: italic;
                         font-weight: bold;
                         font-size: 14px;
-                        color: #4020A0;
+                        color: #4020a0;
                         text-align: center;
                         margin: 10px 0;
                     }
@@ -396,8 +603,9 @@
                     padding: 10px;
                     font-size: 11px;
 
-                    strong, em {
-                        color: #4020A0;
+                    strong,
+                    em {
+                        color: #4020a0;
                     }
 
                     .leftcol {
@@ -415,13 +623,13 @@
                             position: relative;
 
                             .count {
-                                background-color: #DC476C;
+                                background-color: #dc476c;
                                 font-weight: bold;
                                 font-size: 13px;
-                                color: #FFFFFF;
+                                color: #fff;
                                 position: absolute;
-                                top: 0px;
-                                right: 0px;
+                                top: 0;
+                                right: 0;
                                 width: 20px;
                                 height: 20px;
                                 display: flex;
@@ -452,7 +660,7 @@
 
                         h3 {
                             font-size: 20px;
-                            color: #4020A0;
+                            color: #4020a0;
                         }
 
                         .moreinfo-ticket {
@@ -462,7 +670,7 @@
                             cursor: pointer;
 
                             i {
-                                color: #4DB8D9;
+                                color: #4db8d9;
 
                                 &:hover {
                                     color: #000;
@@ -478,7 +686,7 @@
                     }
 
                     .ticketoptions {
-                        padding: 0px 5px 0 0;
+                        padding: 0 5px 0 0;
                         margin: 10px 0 0;
                         width: 100%;
                         line-height: 12px;
@@ -525,7 +733,7 @@
         padding: 0;
 
         li {
-            background-color: #EFF0F7;
+            background-color: #eff0f7;
             color: #646363;
             border-radius: 10px;
             padding: 3px 10px;
@@ -536,7 +744,7 @@
 
             em {
                 font-size: 10px;
-                color: #CC355C;
+                color: #cc355c;
                 font-weight: bold;
             }
         }
@@ -544,12 +752,12 @@
 
     .moreinfo {
         font-size: 12px;
-        color: #604BA0;
+        color: #604ba0;
 
         h3 {
             font-weight: normal;
             font-size: 17px;
-            color: #715CAD;
+            color: #715cad;
             text-align: center;
             margin-top: 10px;
         }
@@ -601,14 +809,14 @@
         text-align: center;
         background-color: rgba(15, 28, 55, 0.6);
         padding: 3px 10px 0;
-        border: 1px solid #7BFAE3;
+        border: 1px solid #7bfae3;
         border-radius: 30px;
 
         > span {
 
             padding: 0 10px;
             font-size: 11px;
-            color: #7BFAE3;
+            color: #7bfae3;
             font-weight: 600;
 
             > i {
@@ -634,7 +842,7 @@
         display: none;
         background-color: #fff;
         font-size: 12px;
-        color: #4020A0;
+        color: #4020a0;
         border-radius: 3px;
         padding: 3px 10px;
         position: absolute;
@@ -673,7 +881,7 @@
     #page-blocks-ludifica-avatars {
         #region-main {
             padding: 0;
-            background: #DDDDF5;
+            background: #ddddf5;
             border-radius: 40px;
 
             > .card {
@@ -692,7 +900,7 @@
             min-width: unset;
             width: 100%;
             padding: 50px 60px;
-            background: #C1C1EB url('[[pix:theme|block_ludifica/back_store_mobile]]') no-repeat center center;
+            background: #c1c1eb url('[[pix:theme|block_ludifica/back_store_mobile]]') no-repeat center center;
             background-size: 90%;
             border-radius: 40px;
 
@@ -712,14 +920,14 @@
             margin: 0;
             padding: 0 5px;
 
-           .internaltitle {
+            .internaltitle {
                 text-align: center;
                 margin-top: 20px;
 
                 h5 {
                     font-weight: bold;
                     font-size: 24px;
-                    color: #4B4B8C;
+                    color: #4b4b8c;
                     text-align: center;
                     border-color: #4b4b8c;
                 }
