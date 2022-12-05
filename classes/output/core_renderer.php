@@ -491,7 +491,7 @@ class theme_abierta_core_renderer extends \theme_boost\output\core_renderer {
         }
 
         // JS to animate the form.
-        $this->page->requires->js_call_amd('core/search-input', 'init', array($identifier));
+//        $this->page->requires->js_call_amd('core/search-input', 'init', array($identifier));
 
         $iconattrs = array(
                         'class' => 'icon-magnifier',
