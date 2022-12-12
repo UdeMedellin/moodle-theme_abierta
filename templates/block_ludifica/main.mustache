@@ -49,10 +49,14 @@
         <div class="player_info">
             <div class="avatar-box">
                 <img src="{{avatarurl}}" alt="{{nickname}}" /><br />
+                <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}level_help, block_ludifica{{/str}}"></button>
             </div>
             <div class="detailscol">
                 <div class="nickname-box">
-                    <h2>{{{nickcontent}}}</h2>
+                    <h2>
+                        {{{nickcontent}}}
+                        <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}name_help, block_ludifica{{/str}}"></button>
+                    </h2>
                     {{^ownprofile}}
                         <div class="profiledescription">
                             {{{description}}}
@@ -116,6 +120,9 @@
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowstopbycourse}}
+
+        <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}course-ranking_help, block_ludifica{{/str}}"></button>
+
         {{>block_ludifica/buttonsbar}}
     </div>
     {{/hastopbycourse}}
@@ -125,7 +132,7 @@
         {{#hasrowstopbysite}}
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
-            <div>
+            <div class="table_container">
                 <table class="generaltable">
                     <thead>
                         <tr>
@@ -144,7 +151,10 @@
                     {{/topbysite}}
                     </tbody>
                 </table>
+
+                <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}site-ranking_help, block_ludifica{{/str}}"></button>
             </div>
+
         </div>
         {{/hasrowstopbysite}}
         {{^hasrowstopbysite}}
@@ -152,6 +162,7 @@
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowstopbysite}}
+
         {{>block_ludifica/buttonsbar}}
     </div>
     {{/hastopbysite}}
@@ -162,6 +173,7 @@
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
             <div>
+            <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}site-ranking_help, block_ludifica{{/str}}"></button>
                 <table class="generaltable">
                     <thead>
                         <tr>
