@@ -22,7 +22,7 @@
             z-index: 1;
         }
 
-        > div:last-child {
+        .table_container {
             background-color: rgba(20, 16, 84, 0.75);
             border-radius: 40px;
             border: 1px solid #0ff;
@@ -107,9 +107,8 @@
             }
 
             .ludifica_help {
-                position: absolute;
-                margin-top: -36px;
-                z-index: 2;
+                margin: auto;
+                display: block;
             }
         }
     }
@@ -198,7 +197,7 @@
                 }
 
                 .ludifica_help {
-                    margin-left: 100%;
+                    color: #3d33a3;
                 }
             }
         }
@@ -250,18 +249,9 @@
             }
         }
     }
-
-    .avatar-box {
-
-        .ludifica_help {
-            margin-right: 80%;
-        }
-    }
 }
 
 .ludifica_help {
-    background: none;
-    border: none;
     color: #fff;
 }
 
@@ -351,7 +341,7 @@
 
         .ludifica_ranking {
 
-            > div:last-child {
+            .table_container {
                 margin: auto;
                 margin-top: 230px;
                 max-width: 90%;
@@ -376,7 +366,7 @@
 
             .ludifica_ranking {
 
-                > div:last-child {
+                .table_container {
                     margin: auto;
                     margin-top: 230px;
                     max-width: 90%;
@@ -397,7 +387,7 @@
         .ludifica_ranking {
             margin-bottom: 130px;
 
-            > div:last-child {
+            .table_container {
                 margin: auto;
                 margin-top: 230px;
                 max-width: 100%;
@@ -957,13 +947,6 @@
             background-position: -79px 0;
             width: 52px;
             height: 30px;
-        }
-
-        .ludifica_help {
-            position: absolute;
-            margin-left: -40px;
-            margin-top: 15px;
-            z-index: 2;
         }
     }
 

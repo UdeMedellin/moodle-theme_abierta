@@ -30,7 +30,6 @@
 
 {{#player}}
 <div id="{{uniqueid}}-ps" class="playerstats">
-    <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}points_help, block_ludifica{{/str}}"></button>
     <span class="points tepuy-mouse-over" data-ref="#{{uniqueid}}-ps.playerstats .points .popup">
         <i></i>
         {{points}}
@@ -41,5 +40,6 @@
         <val key="usercoins">{{coins}}</val>
         <div class="popup">{{#str}} numcoins, theme_abierta {{/str}}</div>
     </span>
+    <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}points_help, block_ludifica{{/str}}"></button>
 </div>
 {{/player}}
