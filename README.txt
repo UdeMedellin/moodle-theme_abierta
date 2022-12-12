@@ -17,5 +17,8 @@ Abierta theme is based in Moove and boost Moodle themes.
 
 IN VERSION
 =============
+2021062001:
+Changes in block ludifica templates and styles.
+
 2020042900:
 Start open repository
