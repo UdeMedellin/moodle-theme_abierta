@@ -93,7 +93,7 @@
         {{#hasrowstopbycourse}}
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
-            <div>
+            <div class="table_container">
                 <table class="generaltable">
                     <thead>
                         <tr>
@@ -112,16 +112,16 @@
                     {{/topbycourse}}
                     </tbody>
                 </table>
+                
+                <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}course-ranking_help, block_ludifica{{/str}}"></button>
             </div>
         </div>
         {{/hasrowstopbycourse}}
         {{^hasrowstopbycourse}}
-            <p>
+            <p class="nottopyet">
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowstopbycourse}}
-
-        <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}course-ranking_help, block_ludifica{{/str}}"></button>
 
         {{>block_ludifica/buttonsbar}}
     </div>
@@ -158,7 +158,7 @@
         </div>
         {{/hasrowstopbysite}}
         {{^hasrowstopbysite}}
-            <p>
+            <p class="nottopyet">
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowstopbysite}}
@@ -172,8 +172,7 @@
         {{#hasrowslastmonth}}
         <div class="ludifica_ranking">
             <div class="ranking_decoration" title="{{#str}}imgranking, theme_abierta{{/str}}"></div>
-            <div>
-            <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}site-ranking_help, block_ludifica{{/str}}"></button>
+            <div class="table_container">
                 <table class="generaltable">
                     <thead>
                         <tr>
@@ -192,11 +191,13 @@
                     {{/lastmonth}}
                     </tbody>
                 </table>
+
+                <button class="ludifica_help icon fa fa-question-circle" data-toggle="popover" data-container="body" data-placement="right" data-content="{{#str}}lastmonth-ranking_help, block_ludifica{{/str}}"></button>
             </div>
         </div>
         {{/hasrowslastmonth}}
         {{^hasrowslastmonth}}
-            <p>
+            <p class="nottopyet">
                 {{#str}} nottopyet, block_ludifica {{/str}}
             </p>
         {{/hasrowslastmonth}}
