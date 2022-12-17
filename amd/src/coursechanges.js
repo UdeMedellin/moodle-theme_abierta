@@ -460,15 +460,16 @@ define(['jquery'], function($) {
             $('.block_ludifica-tabs').each(function() {
                 var $tabs = $(this);
                 var tabslist = [];
-                var $ranking = $('.ranking-button');
+                var $ranking_site = $('.ranking_site-button');
                 var $ranking_course = $('.ranking_course-button');
+                var $ranking_last = $('.ranking_last-button');
                 var $home = $('.home-button');
 
                 $tabs.find('[data-ref]').each(function() {
                     var $tab = $(this);
                     tabslist.push($tab);
 
-                    $ranking.on('click', function() {
+                    $ranking_site.on('click', function() {
                         tabslist.forEach(one => {
                             $(one.data('ref')).removeClass('active');
                         });
@@ -476,12 +477,12 @@ define(['jquery'], function($) {
                         $(".tab-topbysite").addClass('active');
                     });
 
-                    $home.on('click', function() {
+                    $ranking_last.on('click', function() {
                         tabslist.forEach(one => {
                             $(one.data('ref')).removeClass('active');
                         });
 
-                        $(".tab-profile").addClass('active');
+                        $(".tab-lastmonth").addClass('active');
                     });
 
                     $ranking_course.on('click', function() {
@@ -490,6 +491,14 @@ define(['jquery'], function($) {
                         });
 
                         $(".tab-topbycourse").addClass('active');
+                    });
+
+                    $home.on('click', function() {
+                        tabslist.forEach(one => {
+                            $(one.data('ref')).removeClass('active');
+                        });
+
+                        $(".tab-profile").addClass('active');
                     });
                 });
             });

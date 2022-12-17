@@ -242,12 +242,29 @@
 
         .general-buttons {
 
-            .ranking-button {
+            .ranking_site-button {
                 filter: grayscale(1);
                 pointer-events: none;
 
             }
         }
+    }
+
+    .tab-lastmonth {
+
+        .general-buttons {
+
+            .ranking_last-button {
+                filter: grayscale(1);
+                pointer-events: none;
+
+            }
+        }
+    }
+
+    .nottopyet {
+        text-align: center;
+        color: #fff;
     }
 }
 
@@ -281,26 +298,31 @@
     }
 
     .avatars-button {
-        background-position: -173px 5px;
+        background-position: -192px 5px;
     }
 
     .store-button {
-        background-position: -238px 5px;
+        background-position: -258px 5px;
     }
 
-    .ranking-button {
-        background-position: -441px 5px;
+    .ranking_site-button {
+        background-position: -478px 5px;
+        cursor: pointer;
+    }
+
+    .ranking_last-button {
+        background-position: -468px 5px;
         cursor: pointer;
     }
 
     .ranking_course-button {
-        background-position: -447px 5px;
+        background-position: -484px 5px;
         cursor: pointer;
     }
 
 
     .home-button {
-        background-position: -29px 5px;
+        background-position: -34px 5px;
         cursor: pointer;
     }
 }
@@ -409,7 +431,7 @@
             .home-button {
                 display: inline-block;
                 width: 60px;
-                background-position: -24px 5px;
+                background-position: -32px 5px;
             }
         }
 
@@ -627,7 +649,7 @@
                 &.inuse {
                     .used {
                         z-index: 2;
-                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -372px 0px;
+                        background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat -390px 0;
                         width: 34px;
                         height: 34px;
                     }
@@ -938,13 +960,13 @@
         }
 
         .coins i {
-            background-position: -144px 0;
+            background-position: -162px 0;
             width: 33px;
             height: 30px;
         }
 
         .points i {
-            background-position: -79px 0;
+            background-position: -98px 0;
             width: 52px;
             height: 30px;
         }
