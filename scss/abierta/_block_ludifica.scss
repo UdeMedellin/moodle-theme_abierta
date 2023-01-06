@@ -6,7 +6,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 70px;
         margin-bottom: 70px;
         padding-right: 15px;
 
@@ -233,11 +233,6 @@
         color: #3d33a3;
     }
 
-    .tab-topbysite,
-    .tab-topbycourse {
-        min-height: 320px;
-    }
-
     .tab-topbysite {
 
         .general-buttons {
@@ -265,6 +260,7 @@
     .nottopyet {
         text-align: center;
         color: #fff;
+        margin-top: 117px;
     }
 }
 
@@ -281,8 +277,11 @@
     bottom: 10px;
     right: 10px;
     z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
 
-    > a {
+    a {
         background: rgba(15, 28, 55, 0.6) url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
         text-align: center;
         padding: 40px 10px 0;
@@ -291,44 +290,86 @@
         width: 70px;
         font-size: 12px;
         color: #7bfae3;
+        margin: 3px;
+        cursor: pointer;
 
         &:hover {
             filter: grayscale(1);
         }
     }
 
+    .ranking_buttons {
+        width: 106px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 15px;
+        padding: 5px 5px 0 5px;
+        margin-right: -10px;
+    }
+
+    .ranking_buttons {
+
+        a {
+            display: none;
+        }
+
+        a:last-child {
+            background-position: -478px 5px;
+            display: block;
+            color: #00ffe5;
+        }
+
+        .ranking_site-button {
+            background-position: -478px 5px;
+
+        }
+
+        .ranking_last-button {
+            background-position: -468px 5px;
+            width: 100px;
+        }
+
+        .ranking_course-button {
+            background-position: -478px 5px;
+        }
+
+        &:hover a {
+            display: block;
+        }
+
+        &:hover a:last-child {
+            display: block;
+            filter: grayscale(1);
+        }
+
+        &:hover {
+            background-color: #232165c4;
+            box-shadow: 0 0 30px 0 #00ffe5;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .home-button {
+        background-position: -34px 5px;
+        width: 56px;
+    }
+
     .avatars-button {
         background-position: -192px 5px;
+        width: 80px;
     }
 
     .store-button {
         background-position: -258px 5px;
+        width: 64px;
     }
 
-    .ranking_site-button {
-        background-position: -478px 5px;
-        cursor: pointer;
-    }
-
-    .ranking_last-button {
-        background-position: -468px 5px;
-        cursor: pointer;
-    }
-
-    .ranking_course-button {
-        background-position: -484px 5px;
-        cursor: pointer;
-    }
-
-
-    .home-button {
-        background-position: -34px 5px;
-        cursor: pointer;
-    }
 }
 
 .block_ludifica-tabcontent {
-    min-height: 300px;
+    min-height: 380px;
 }
 
 .tab-topbycourse {
@@ -350,11 +391,26 @@
     }
 
     .playerstats {
-        margin-top: 35px;
+        margin-top: 38px;
     }
     .block-controls {
         background-color: white;
         padding: 5px;
+    }
+
+    .avatar-box {
+        margin-top: 90px !important;
+    }
+
+    .ranking_decoration {
+        margin-top: 175px !important;
+    }
+
+    .tab-profile {
+
+        .player_info {
+            margin-bottom: 129px;
+        }
     }
 }
 
@@ -387,6 +443,8 @@
         .block_ludifica {
 
             .ludifica_ranking {
+                margin-top: 90px;
+                margin-bottom: 145px;
 
                 .table_container {
                     margin: auto;
@@ -397,6 +455,14 @@
                 > .ranking_decoration {
                     width: 100%;
                     right: 0;
+                    margin-top: 90px;
+                }
+            }
+
+            .tab-profile {
+
+                .player_info {
+                    margin-bottom: 129px;
                 }
             }
         }
@@ -411,12 +477,14 @@
 
             .table_container {
                 margin: auto;
-                margin-top: 230px;
+                margin-top: 255px;
+                margin-bottom: 23px;
                 max-width: 100%;
             }
 
             > .ranking_decoration {
                 margin-left: -15px;
+                margin-top: 92px;
                 left: 15px;
                 right: 0;
             }
@@ -432,11 +500,20 @@
                 display: inline-block;
                 width: 60px;
                 background-position: -32px 5px;
+                margin-left: 22px;
             }
         }
 
-        .player_info {
-            margin-bottom: 120px;
+        .avatar-box {
+            margin-top: 82px;
+            margin-bottom: 17px;
+        }
+
+        .tab-profile {
+
+            .player_info {
+                margin-bottom: 129px;
+            }
         }
     }
 }
@@ -937,7 +1014,7 @@
 
     .playerstats {
         position: absolute;
-        top: 10px;
+        top: 30px;
         right: 10px;
         display: flex;
         text-align: center;
@@ -945,6 +1022,7 @@
         padding: 3px 10px 0;
         border: 1px solid #7bfae3;
         border-radius: 30px;
+        z-index: 1;
 
         > span {
 
