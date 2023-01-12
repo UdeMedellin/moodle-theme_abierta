@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-define(['jquery'], function($) {
+define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
   'use strict';
 
     return {
@@ -502,6 +502,17 @@ define(['jquery'], function($) {
                     });
                 });
             });
+
+            $('.dynamichelp-button').on('click', function() {
+
+                var $content = $('.modalhelps');
+
+                ModalFactory.create({
+                  body: $content.html()
+                }).then(function(modal) {
+                modal.show();
+            });
+        });
         }
     };
 });
