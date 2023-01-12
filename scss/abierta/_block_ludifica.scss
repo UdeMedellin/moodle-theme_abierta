@@ -598,12 +598,30 @@
                 min-width: 259px;
             }
         }
+    }
+}
 
-        .pointsinfo {
-            margin: 50px 0 120px 0;
-            > div {
-                margin: 5px;
-            }
+.pointsinfo {
+
+    > div {
+        margin: 5px;
+    }
+
+    .fa-stack {
+        margin-right: 10px;
+
+        .mt6 {
+            margin-top: 6px;
+        }
+
+        .fa-scale {
+            margin-top: -14px;
+            transform: scale(1, 0.4);
+        }
+
+        .fa-levelup {
+            left: 21px;
+            top: -5px;
         }
     }
 }
