@@ -605,6 +605,13 @@
 
     > div {
         margin: 5px;
+
+        ul {
+
+            > li {
+                align-items: center;
+            }
+        }
     }
 
     .fa-stack {
