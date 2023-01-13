@@ -292,7 +292,8 @@
 
     .pointsinfo h3,
     .pointsinfo i,
-    .pointsinfo h4 {
+    .pointsinfo h4,
+    .pointsinfo strong {
         color: #7bfae3;
         margin-top: 0;
     }
@@ -605,31 +606,31 @@
 
     > div {
         margin: 5px;
-
-        ul {
-
-            > li {
-                align-items: center;
-            }
-        }
     }
 
     .fa-stack {
-        margin-right: 10px;
+        margin-right: 37px;
+        width: 20px;
 
         .mt6 {
             margin-top: 6px;
+            left: 8px;
         }
 
         .fa-scale {
             margin-top: -14px;
             transform: scale(1, 0.4);
+            left: 8px;
         }
 
         .fa-levelup {
-            left: 21px;
+            left: 29px;
             top: -5px;
         }
+    }
+
+    strong {
+        color: #3d33a3;
     }
 }
 
