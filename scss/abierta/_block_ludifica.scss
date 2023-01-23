@@ -275,6 +275,20 @@
     .pointsinfo {
         background: none;
         padding: 50px 10px;
+        margin-bottom: 50px;
+
+        .list-group-item {
+            background: none;
+        }
+
+        .card-header {
+            color: #fff;
+            border-bottom: none;
+        }
+
+        .icon {
+            font-size: 1.5em;
+        }
     }
 
     .pointsinfo li,
@@ -600,6 +614,16 @@
                 min-width: 259px;
             }
         }
+
+        .pointsinfo {
+
+            > div {
+
+                &:last-child {
+                    margin-top: -40px;
+                }
+            }
+        }
     }
 }
 
@@ -632,6 +656,14 @@
 
     strong {
         color: #3d33a3;
+    }
+
+    .rounded-pill {
+        color: #fff;
+    }
+
+    .card-header {
+        background: none;
     }
 }
 
