@@ -31,17 +31,29 @@
 
 <div class="general-buttons">
 
-    {{#hastopbysite}}
-        <a class="ranking_site-button">{{#str}} ranking_site, theme_abierta {{/str}}</a>
-    {{/hastopbysite}}
+    {{#hasdynamichelps}}
+    <a class="dynamichelp-button">{{#str}} dynamichelp_button, theme_abierta {{/str}}</a>
+    {{/hasdynamichelps}}
 
-    {{#hastopbycourse}}
-        <a class="ranking_course-button">{{#str}} ranking_course, theme_abierta {{/str}}</a>
-    {{/hastopbycourse}}
+    {{#hasranking}}
+        <div class="ranking_buttons">
+        
+            {{#haslastmonth}}
+                <a class="ranking_last-button">{{#str}} ranking_last, theme_abierta {{/str}}</a>
+            {{/haslastmonth}}
 
-    {{#haslastmonth}}
-        <a class="ranking_last-button">{{#str}} ranking_last, theme_abierta {{/str}}</a>
-    {{/haslastmonth}}
+            {{#hastopbycourse}}
+                <a class="ranking_course-button">{{#str}} ranking_course, theme_abierta {{/str}}</a>
+            {{/hastopbycourse}}
+        
+            {{#hastopbysite}}
+                <a class="ranking_site-button">{{#str}} ranking_site, theme_abierta {{/str}}</a>
+            {{/hastopbysite}}
+
+            <a>{{#str}} ranking_button, theme_abierta {{/str}}</a>
+
+        </div>
+    {{/hasranking}}
 
     <a href="{{baseurl}}/blocks/ludifica/avatars.php" class="avatars-button {{#current}}current-user{{/current}}">{{#str}} avatars, block_ludifica {{/str}}</a>
     <a href="{{baseurl}}/blocks/ludifica/tickets.php" class="store-button {{#current}}current-user{{/current}}">{{#str}} store, block_ludifica {{/str}}</a>
@@ -57,4 +69,5 @@
     {{#ownprofile}}
         <a class="home-button">{{#str}} home, theme_abierta {{/str}}</a>
     {{/ownprofile}}
+    
 </div>
