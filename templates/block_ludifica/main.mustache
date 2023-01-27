@@ -114,77 +114,73 @@
                 </div>
                 {{/haslevels}}
                 {{/insitecontext}}
+
                 {{^insitecontext}}
-
-                {{#helpvars}}
-                <div class="card">
-                    <div class="card-body">
-                        {{#pointsbyendcourse}}
-                        <div class="d-flex">
-                            {{#pix}} i/courseevent, core {{/pix}}
-                            <div>
-                                {{#hasduration}}
-                                    {{#pointsbycomplete}}
-                                        {{{label}}}
-                                    {{/pointsbycomplete}}
-                                {{/hasduration}}
-
-                                {{^hasduration}}
-                                    {{#str}} dynamic_help-pointsbyendcourse, block_ludifica, {{pointsbyendcourse}} {{/str}}
-                                {{/hasduration}}
-                            </div>
-                            </div>
-                    {{/pointsbyendcourse}}
-                    </div>
-                </div>
-                {{/helpvars}}
-
-                {{#pointsbyallmodules}}
-                <div class="card">
-                    {{#helpvars}}
-                    <div>
-                        <div class="card-header">
+                    {{#pointsbycomplete}}
+                    <div class="card">
+                        <div class="card-body">
                             <div class="d-flex">
-                                {{#pix}} t/award, core {{/pix}}
+                                {{#pix}} i/courseevent, core {{/pix}}
                                 <div>
-                                    {{#str}} dynamic_help-pointsbyendmodule, block_ludifica, {{pointsbyendcoursemodule}} {{/str}}
+                                    {{#hasduration}}
+                                        {{#str}} dynamic_help-pointsbyendcourseduration, block_ludifica, {{totalpoints}} {{/str}}
+                                    {{/hasduration}}
+
+                                    {{^hasduration}}
+                                        {{#str}} dynamic_help-pointsbyendcourse, block_ludifica, {{pointsbyendcourse}} {{/str}}
+                                    {{/hasduration}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{/helpvars}}
-                </div>
-                {{/pointsbyallmodules}}
-                {{^pointsbyallmodules}}
+                    {{/pointsbycomplete}}
 
-                {{#hasactivities}}
-                <div class="card activities-list">
-                    <div class="card-header">
-                        <h3>{{#str}} helptitle_pointsbycoursemodule, block_ludifica {{/str}}</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                        {{#pointsbymodules}}
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <img src="{{{iconurl}}}" alt="{{typetitle}}" title="{{typetitle}}" />
-                                    {{name}} ({{typetitle}})
+                    {{#pointsbyallmodules}}
+                    <div class="card">
+                        {{#helpvars}}
+                        <div>
+                            <div class="card-header">
+                                <div class="d-flex">
+                                    {{#pix}} t/award, core {{/pix}}
+                                    <div>
+                                        {{#str}} dynamic_help-pointsbyendmodule, block_ludifica, {{pointsbyendcoursemodule}} {{/str}}
+                                    </div>
                                 </div>
-                                <span class="badge bg-primary rounded-pill">{{#str}} dynamic_help-pointsbymodule, block_ludifica, {{points}} {{/str}}</span>
-                            </li>
-                        {{/pointsbymodules}}
-                        </ul>
+                            </div>
+                        </div>
+                        {{/helpvars}}
                     </div>
-                </div>
-                {{/hasactivities}}
+                    {{/pointsbyallmodules}}
 
-                {{^hasactivities}}
-                <div>
-                    <h3>{{#str}} dynamic_help-noactivities, block_ludifica {{/str}}</h3>
-                </div>
-                {{/hasactivities}}
+                    {{^pointsbyallmodules}}
+                        {{#hasactivities}}
+                        <div class="card activities-list">
+                            <div class="card-header">
+                                <h3>{{#str}} helptitle_pointsbycoursemodule, block_ludifica {{/str}}</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                {{#pointsbymodules}}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <img src="{{{iconurl}}}" alt="{{typetitle}}" title="{{typetitle}}" />
+                                            {{name}} ({{typetitle}})
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">{{#str}} dynamic_help-pointsbymodule, block_ludifica, {{points}} {{/str}}</span>
+                                    </li>
+                                {{/pointsbymodules}}
+                                </ul>
+                            </div>
+                        </div>
+                        {{/hasactivities}}
 
-                {{/pointsbyallmodules}}
+                        {{^hasactivities}}
+                        <div>
+                            <h3>{{#str}} dynamic_help-noactivities, block_ludifica {{/str}}</h3>
+                        </div>
+                        {{/hasactivities}}
+
+                    {{/pointsbyallmodules}}
 
                 {{/insitecontext}}
             </div>
