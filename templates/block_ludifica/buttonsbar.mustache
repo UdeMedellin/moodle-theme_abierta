@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template block_ludifica/main
+    @template block_ludifica/buttonsbar
 
     This template renders the template content area for a resource.
 
@@ -35,9 +35,11 @@
     <a class="dynamichelp-button">{{#str}} dynamichelp_button, theme_abierta {{/str}}</a>
     {{/hasdynamichelps}}
 
+    <a href="{{baseurl}}/blocks/ludifica/badges.php" class="badges-button">{{#str}} badges_button, theme_abierta {{/str}}</a>
+
     {{#hasranking}}
         <div class="ranking_buttons">
-        
+
             {{#haslastmonth}}
                 <a class="ranking_last-button">{{#str}} ranking_last, theme_abierta {{/str}}</a>
             {{/haslastmonth}}
@@ -45,7 +47,7 @@
             {{#hastopbycourse}}
                 <a class="ranking_course-button">{{#str}} ranking_course, theme_abierta {{/str}}</a>
             {{/hastopbycourse}}
-        
+
             {{#hastopbysite}}
                 <a class="ranking_site-button">{{#str}} ranking_site, theme_abierta {{/str}}</a>
             {{/hastopbysite}}
@@ -58,6 +60,7 @@
     <a href="{{baseurl}}/blocks/ludifica/avatars.php" class="avatars-button {{#current}}current-user{{/current}}">{{#str}} avatars, block_ludifica {{/str}}</a>
     <a href="{{baseurl}}/blocks/ludifica/tickets.php" class="store-button {{#current}}current-user{{/current}}">{{#str}} store, block_ludifica {{/str}}</a>
 
+
     {{#layoutavatars}}
         <a href="{{baseurl}}" class="home-button">{{#str}} home, theme_abierta {{/str}}</a>
     {{/layoutavatars}}
@@ -65,9 +68,14 @@
     {{#layouttickets}}
         <a href="{{baseurl}}" class="home-button">{{#str}} home, theme_abierta {{/str}}</a>
     {{/layouttickets}}
-    
+
+    {{#layoutbadges}}
+        <a href="{{baseurl}}" class="home-button">{{#str}} home, theme_abierta {{/str}}</a>
+    {{/layoutbadges}}
+
+
     {{#ownprofile}}
         <a class="home-button">{{#str}} home, theme_abierta {{/str}}</a>
     {{/ownprofile}}
-    
+
 </div>

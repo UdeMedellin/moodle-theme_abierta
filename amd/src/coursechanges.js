@@ -13,8 +13,34 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
+define(['jquery', 'core/modal_factory', 'core/str'], function($, ModalFactory, str, Log) {
   'use strict';
+
+    // Load strings.
+    var strings = [];
+    strings.push({key: 'badgelinkcopiedtoclipboard', component: 'block_ludifica'});
+
+    var s = [];
+
+    if (strings.length > 0) {
+
+        strings.forEach(one => {
+            s[one.key] = one.key;
+        });
+
+        str.get_strings(strings).then(function(results) {
+            var pos = 0;
+            strings.forEach(one => {
+                s[one.key] = results[pos];
+                pos++;
+            });
+            return true;
+        }).fail(function(e) {
+            Log.debug('Error loading strings');
+            Log.debug(e);
+        });
+    }
+    // End of Load strings.
 
     return {
         init: function() {
@@ -503,16 +529,67 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
                 });
             });
 
+            // ==============================================================================================
+            // Show dynamic helps
+            // ==============================================================================================
             $('.dynamichelp-button').on('click', function() {
 
                 var $content = $('.modalhelps');
 
                 ModalFactory.create({
-                  body: $content.html()
-                }).then(function(modal) {
-                modal.show();
+                      body: $content.html()
+                    }).then(function(modal) {
+                    modal.show();
+                });
             });
-        });
+
+            // ==============================================================================================
+            // Info badge modal
+            // ==============================================================================================
+
+            $('.openbadgeinfo').on('click', function() {
+                var $content = $('.more-badge');
+                var $title = $content.attr('title');
+
+                ModalFactory.create({
+                    title: $title,
+                    body: $content.html(),
+                }).then(function(modal) {
+                    return modal.show().then(function() {
+                        $('.openshare-from_modal').on('click', function() {
+                            var $sharecontent = $('.share_badge_modal');
+                            var $sharetitle = $sharecontent.attr('title');
+
+                            ModalFactory.create({
+                                title: $sharetitle,
+                                body: $sharecontent.html(),
+                            }).then(function(modal) {
+                                return modal.show().then(function() {
+                                    $('input[name="badgelink"]').on('click', function() {
+                                        var $input = $(this);
+                                        $input.select();
+                                        document.execCommand("copy");
+
+                                        var $msg = $('<div class="msg-badgelink-copy">' +
+                                        s.badgelinkcopiedtoclipboard +
+                                        '</div>');
+
+                                        $input.parent().append($msg);
+                                        window.setTimeout(function() {
+                                            $msg.remove();
+                                        }, 1600);
+                                    });
+                                    return true;
+                                });
+                            }).fail(function(e) {
+                                Log.debug('Error creating modal share buttons');
+                                Log.debug(e);
+                            });
+                            return true;
+                        });
+                    });
+                });
+            });
         }
     };
 });
