@@ -1529,3 +1529,45 @@
         }
     }
 }
+
+#page-blocks-ludifica-tickets,
+#page-blocks-ludifica-avatars,
+#page-blocks-ludifica-badges {
+    .alertc-control {
+        position: absolute;
+        border: none;
+        top: 20%;
+
+        > div {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            padding: 70px 0;
+            box-shadow: 0 0 14px #0f1c37;
+            border-radius: 10px;
+            font-size: 30px;
+            font-weight: bolder;
+            opacity: 0.95;
+        }
+
+        .alert-success {
+            background-color: #9ad175;
+            color: #406b24;
+        }
+
+        .alert-danger {
+            background-color: #f92a82;
+            color: #8b043e;
+        }
+
+        .alert-warning {
+            background-color: #ffbd70;
+            color: #a35700;
+        }
+
+        .alert-secondary {
+            background-color: #4e4ec2;
+            color: #fff;
+        }
+    }
+}
