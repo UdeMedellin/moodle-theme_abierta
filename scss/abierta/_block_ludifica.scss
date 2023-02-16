@@ -1335,17 +1335,13 @@
         top: 20%;
 
         > div {
-            width: 62%;
+            width: 50%;
             margin: auto;
             text-align: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 70px 0;
             box-shadow: 0 0 14px #0f1c37;
             border-radius: 10px;
             font-size: 30px;
-            color: #fff;
             font-weight: bolder;
             opacity: 0.95;
         }
