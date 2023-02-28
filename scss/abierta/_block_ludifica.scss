@@ -1205,23 +1205,29 @@
 
         > a {
             display: block;
-            width: 149px;
-            height: 64px;
             margin: 10px 10px 50px 10px;
             text-align: center;
-            filter: saturate(0);
             transform: rotate(0deg);
-            transition: 0.2s;
+            transition: 0.1s;
+            font-size: 40px;
+            filter: drop-shadow(0 2px 1px #ffffff);
 
             &:hover {
                 filter: saturate(1);
                 transform: rotate(2deg);
+                filter: drop-shadow(0 0 8px #4db8d9);
             }
 
-            > span {
-                display: block;
-                margin-top: 66px;
-                font-size: 12px;
+            > i {
+
+                color: #0f1c37;
+
+                &:hover {
+                    filter: saturate(1);
+                    transform: rotate(2deg);
+                    color: #4020A0;
+                    filter: drop-shadow(0 4px 4px #fff);
+                }
             }
         }
 
