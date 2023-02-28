@@ -1210,12 +1210,11 @@
             transform: rotate(0deg);
             transition: 0.1s;
             font-size: 40px;
-            filter: drop-shadow(0 2px 1px #ffffff);
+            filter: drop-shadow(0 2px 1px #fff);
 
             &:hover {
                 filter: saturate(1);
                 transform: rotate(2deg);
-                filter: drop-shadow(0 0 8px #4db8d9);
             }
 
             > i {
@@ -1223,10 +1222,9 @@
                 color: #0f1c37;
 
                 &:hover {
-                    filter: saturate(1);
                     transform: rotate(2deg);
-                    color: #4020A0;
-                    filter: drop-shadow(0 4px 4px #fff);
+                    color: #4020a0;
+                    filter: drop-shadow(0 0 8px #4db8d9);
                 }
             }
         }
