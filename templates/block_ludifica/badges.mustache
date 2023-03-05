@@ -55,11 +55,10 @@
                                 </div>
                                 <div>
                                     <p>{{description}}</p>
-                                    {{#criteria}}
-                                    <ul>
-                                        <li>{{#pix}} i/star-o, core {{/pix}} {{criteriaitem}}</li>
-                                    </ul>
-                                    {{/criteria}}
+                                    {{#dateexpire}}
+                                    <p>{{#str}} badge_expire, block_ludifica {{/str}} {{expire}}</p>
+                                    {{/dateexpire}}
+                                    <hr>
                                     <a class="badgebuttons openshare-from_modal"><span id="share_ico"></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
                                 </div>
                             </div>

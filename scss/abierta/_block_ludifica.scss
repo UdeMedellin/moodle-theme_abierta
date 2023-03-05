@@ -1218,12 +1218,11 @@
             }
 
             > i {
-                color: #0f1c3773;
 
                 &:hover {
                     transform: rotate(2deg);
-                    color: #4db8d9;
-                    filter: drop-shadow(-2px 2px 1px #3f1267e4);
+                    color: #31177f;
+                    filter: drop-shadow(-2px 2px 3px #ffbd70);
                 }
             }
         }
