@@ -1273,9 +1273,14 @@
         }
     }
 
-    .unavailable_badge {
+    .unavailable {
         mix-blend-mode: multiply;
         pointer-events: none;
+        filter: saturate(1);
+    }
+
+    .unavailable .info-box {
+        display: none;
     }
 }
 
