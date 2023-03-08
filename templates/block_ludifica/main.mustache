@@ -226,6 +226,21 @@
                     {{/tickets}}
                     </div>
                 </div>
+                <div class="badges-box">
+                    <h3> {{#str}} badges, block_ludifica {{/str}} </h3>
+                    <div>
+                    {{#badges}}
+                        <div class="onebadge-container">
+                            <a href="{{url}}"><div class="onebadge" style="background-image: url({{thumbnail}})" title="{{name}}"></div></a>
+                        </div>
+                    {{/badges}}
+                    {{^badges}}
+                        <p class="notavailableyet">
+                            {{#str}} notuserbadges, block_ludifica {{/str}}
+                        </p>
+                    {{/badges}}
+                    </div>
+                </div>
                 {{/ownprofile}}
             </div>
         </div>

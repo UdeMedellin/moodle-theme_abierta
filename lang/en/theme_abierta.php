@@ -136,6 +136,7 @@ $string['ranking_site'] = 'Sitio';
 $string['ranking_last'] = 'Último mes';
 $string['ranking_course'] = 'Curso';
 $string['dynamichelp_button'] = 'Ayuda';
+$string['badges_button'] = 'Logros';
 $string[''] = '';
 $string[''] = '';
 $string[''] = '';

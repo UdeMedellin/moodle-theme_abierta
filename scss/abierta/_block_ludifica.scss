@@ -146,7 +146,8 @@
                     }
                 }
 
-                .tickets-box {
+                .tickets-box,
+                .badges-box {
                     margin-top: 20px;
 
                     h3 {
@@ -161,11 +162,16 @@
 
                     > div {
                         display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        max-width: 322px;
 
-                        .oneticket-container {
+                        .oneticket-container,
+                        .onebadge-container {
                             position: relative;
 
-                            .oneticket {
+                            .oneticket,
+                            .onebadge {
                                 background-color: #00ffe5;
                                 background-repeat: no-repeat;
                                 background-size: cover;
@@ -175,6 +181,12 @@
                                 color: #fff;
                                 border-radius: 15px;
                                 border: 1px solid #00ffe5;
+                            }
+
+                            .onebadge {
+                                background-color: #00ffe500;
+                                border: 0;
+                                filter: drop-shadow(0 0 5px #00ffe5);
                             }
 
                             .count {
@@ -315,7 +327,10 @@
     .pointsinfo .fa-stack .fa-scale {
         color: #4020a0;
     }
+}
 
+.notavailableyet {
+    color: #fff;
 }
 
 .modal-content {
@@ -401,23 +416,23 @@
         }
 
         a:last-child {
-            background-position: -478px 5px;
+            background-position: -483px 5px;
             display: block;
-            color: #00ffe5;
+            color: #7bfae3;
         }
 
         .ranking_site-button {
-            background-position: -478px 5px;
+            background-position: -483px 5px;
 
         }
 
         .ranking_last-button {
-            background-position: -468px 5px;
+            background-position: -472px 5px;
             width: 100px;
         }
 
         .ranking_course-button {
-            background-position: -478px 5px;
+            background-position: -483px 5px;
         }
 
         &:hover a {
@@ -454,6 +469,11 @@
 
     .dynamichelp-button {
         background-position: 12px 5px;
+        width: 62px;
+    }
+
+    .badges-button {
+        background-position: -430px 5px;
         width: 62px;
     }
 
@@ -501,27 +521,6 @@
 
         .player_info {
             margin-bottom: 129px;
-        }
-    }
-}
-
-@media (max-width: 900px) {
-    .block_ludifica {
-
-        .ludifica_ranking {
-
-            .table_container {
-                margin: auto;
-                margin-top: 230px;
-                max-width: 90%;
-            }
-
-            > .ranking_decoration {
-                margin: auto;
-                width: 100%;
-                margin-top: 50px;
-                right: 0;
-            }
         }
     }
 }
@@ -668,7 +667,8 @@
 }
 
 #block_ludifica-tickets,
-#block_ludifica-store {
+#block_ludifica-store,
+#block_ludifica-badges {
     display: flex;
     padding: 40px;
     justify-content: space-between;
@@ -746,12 +746,17 @@
                     font-weight: bold;
                     text-decoration: none;
                 }
+
+                &:last-child {
+                    display: none;
+                }
             }
         }
     }
 
     #tickets-box,
-    #avatars-box {
+    #avatars-box,
+    #badges-box {
         position: relative;
         margin-left: 20px;
         margin-bottom: 40px;
@@ -1090,6 +1095,160 @@
     }
 }
 
+#page-blocks-ludifica-badges {
+
+    .general-buttons {
+
+        .badges-button {
+            filter: grayscale(1);
+            pointer-events: none;
+        }
+    }
+
+    #badges-box {
+        #badges-list {
+            margin-top: 20px;
+            overflow: auto;
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 350px;
+            min-width: 327px;
+        }
+    }
+
+    .badges_decoration {
+        min-width: 365px;
+        min-height: 325px;
+        background: url('[[pix:theme|block_ludifica/badges]]') no-repeat center center;
+        position: relative;
+    }
+
+    .onebadge {
+        border: 1px solid #a9cfd6;
+        max-width: 250px;
+        min-width: 226px;
+        border-radius: 20px;
+        margin: 7px;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+
+        > div {
+            background-color: #3f1267e4;
+            background-blend-mode: multiply;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            align-items: center;
+
+            .badge_picture_ludifica {
+                max-width: 100%;
+            }
+
+            .info-box {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .more_badge_content {
+        display: flex;
+
+        a {
+            background-color: #d5ddf5;
+        }
+
+        img {
+            max-width: 189px;
+        }
+    }
+
+    .badgebuttons {
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 20px;
+        color: #650ca1;
+        cursor: pointer;
+        font-size: 10px;
+
+        &:hover {
+            background-color: #650ca1;
+            color: #fff;
+        }
+
+        #moreinfo_ico {
+            background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
+            background-position: -328px -9px;
+            display: inline-block;
+            width: 19px;
+            height: 17px;
+            margin-bottom: -5px;
+        }
+
+        #share_ico {
+            background: url('[[pix:theme|block_ludifica/sprite_icons]]') no-repeat;
+            background-position: -557px -9px;
+            display: inline-block;
+            width: 19px;
+            height: 17px;
+            margin-bottom: -5px;
+        }
+    }
+
+    .unavailable {
+        filter: saturate(1);
+    }
+
+    .unavailable img {
+        mix-blend-mode: multiply;
+    }
+
+    .unavailable .openshare_abierta {
+        display: none;
+    }
+
+    .modal-body {
+
+        h5 {
+            color: #58595b;
+        }
+    }
+}
+
+#page-blocks-ludifica-badges .card-body {
+
+    .list-group-item {
+        border: none;
+
+        > a {
+            display: block;
+            text-align: center;
+            transform: rotate(0deg);
+            transition: 0.1s;
+            font-size: 40px;
+            filter: drop-shadow(0 2px 1px #fff);
+
+            &:hover {
+                transform: rotate(2deg);
+                filter: drop-shadow(-2px 2px 3px #31177f);
+            }
+        }
+    }
+
+    .badge_linkedin {
+        background: url('[[pix:theme|block_ludifica/linkedin]]') no-repeat center center;
+    }
+
+    .badge_facebook {
+        background: url('[[pix:theme|block_ludifica/facebook]]') no-repeat center center;
+    }
+
+    .badge_twitter {
+        background: url('[[pix:theme|block_ludifica/twitter]]') no-repeat center center;
+    }
+
+}
+
 /* Independent because is loaded into a dialogue. */
 .modal-dialog {
     .codeslist {
@@ -1162,7 +1321,8 @@
 
 .block_ludifica,
 #block_ludifica-tickets,
-#block_ludifica-store {
+#block_ludifica-store,
+#block_ludifica-badges {
 
     position: relative;
 
@@ -1231,7 +1391,8 @@
 }
 
 #page-blocks-ludifica-avatars #region-main,
-#page-blocks-ludifica-tickets #region-main {
+#page-blocks-ludifica-tickets #region-main,
+#page-blocks-ludifica-badges #region-main {
     background: url('[[pix:theme|block_ludifica/back_store_desktop]]') no-repeat left top;
     background-size: cover;
 
@@ -1286,10 +1447,11 @@
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
 
     #page-blocks-ludifica-tickets,
-    #page-blocks-ludifica-avatars {
+    #page-blocks-ludifica-avatars,
+    #page-blocks-ludifica-badges {
         #region-main {
             padding: 0;
             background: #ddddf5;
@@ -1302,7 +1464,8 @@
     }
 
     #block_ludifica-tickets,
-    #block_ludifica-store {
+    #block_ludifica-store,
+    #block_ludifica-badges {
         flex-wrap: wrap;
         padding: 0;
         background: transparent;
@@ -1327,7 +1490,8 @@
         }
 
         #tickets-box,
-        #avatars-box {
+        #avatars-box,
+        #badges-box {
             margin: 0 0 30px 0;
             padding: 0 5px;
 
@@ -1367,6 +1531,32 @@
         }
     }
 
+    #page-blocks-ludifica-badges {
+
+        .badges_decoration {
+            display: block;
+            margin: auto;
+        }
+
+        #badges-box {
+            #badges-list {
+                overflow: initial;
+                max-height: none;
+                justify-content: center;
+            }
+        }
+
+        #block_ludifica-badges {
+            background: #c1c1eb url('[[pix:theme|block_ludifica/back_store_mobile]]') no-repeat;
+            background-position-y: 39px;
+        }
+
+        #badges-box {
+            margin: 0 0 80px 0;
+            padding: 0 5px;
+        }
+    }
+
     #page-blocks-ludifica-tickets,
     #page-blocks-ludifica-avatars,
     #page-blocks-ludifica-badges {
@@ -1376,5 +1566,28 @@
                 width: 90%;
             }
         }
+    }
+
+    .block_ludifica {
+
+        .ludifica_ranking {
+
+            .table_container {
+                margin: auto;
+                margin-top: 230px;
+                max-width: 90%;
+            }
+
+            > .ranking_decoration {
+                margin: auto;
+                width: 100%;
+                margin-top: 50px;
+                right: 0;
+            }
+        }
+    }
+
+    .badges-box {
+        margin-bottom: 70px;
     }
 }

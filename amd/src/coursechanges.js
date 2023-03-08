@@ -13,8 +13,34 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
+define(['jquery', 'core/modal_factory', 'core/str', 'core/log', 'core/templates'], function($, ModalFactory, str, Log, Templates) {
   'use strict';
+
+    // Load strings.
+    var strings = [];
+    strings.push({key: 'badgelinkcopiedtoclipboard', component: 'block_ludifica'});
+
+    var s = [];
+
+    if (strings.length > 0) {
+
+        strings.forEach(one => {
+            s[one.key] = one.key;
+        });
+
+        str.get_strings(strings).then(function(results) {
+            var pos = 0;
+            strings.forEach(one => {
+                s[one.key] = results[pos];
+                pos++;
+            });
+            return true;
+        }).fail(function(e) {
+            Log.debug('Error loading strings');
+            Log.debug(e);
+        });
+    }
+    // End of Load strings.
 
     return {
         init: function() {
@@ -503,16 +529,60 @@ define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
                 });
             });
 
+            // ==============================================================================================
+            // Show dynamic helps
+            // ==============================================================================================
             $('.dynamichelp-button').on('click', function() {
 
                 var $content = $('.modalhelps');
 
                 ModalFactory.create({
-                  body: $content.html()
-                }).then(function(modal) {
-                modal.show();
+                      body: $content.html()
+                    }).then(function(modal) {
+                    modal.show();
+                });
             });
-        });
+
+            // ==============================================================================================
+            // Info badge modal
+            // ==============================================================================================
+
+            $('.openbadgeinfo').on('click', function() {
+
+                var badge = {
+                    "id": $(this).data('badgeid')
+                };
+
+                var $badge = $('#badge-' + badge.id);
+
+                badge.description = $badge.data('description');
+                badge.thumbnail = $badge.find('.thumbnail').attr('src');
+                badge.expire = $badge.data('expire');
+                badge.unavailable = $badge.data('unavailable');
+                badge.name = $badge.data('name');
+
+                var badgedata = {
+                    "description": badge.description,
+                    "thumbnailurl": badge.thumbnail,
+                    "expire": badge.expire,
+                    "unavailable": badge.unavailable,
+                    "badge": badge
+                };
+
+                ModalFactory.create({
+                    title: badge.name,
+                    body: Templates.render('block_ludifica/badgeinfo', badgedata),
+                }).then(function(modal) {
+                    return modal.show().then(function() {
+
+                        $('.openshare_abierta').on('click', function() {
+
+                            $badge.find('.openshare').trigger('click');
+
+                        });
+                    });
+                });
+            });
         }
     };
 });

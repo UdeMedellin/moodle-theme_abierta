@@ -1,0 +1,46 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_ludifica/badgeinfo
+
+    This template renders the template content for share a badge.
+
+    Example context (json):
+    {
+        "description": "description",
+        "thumbnailurl": "https://thumbnail.badge.url",
+        "expire": "expire"
+    }
+}}
+
+{{#badge}}
+<div class="more_badge_content">
+    <div class="mr-4">
+        <img src="{{thumbnail}}" alt="{{name}}">
+    </div>
+    <div>
+        <p>{{description}}</p>
+        {{#dateexpire}}
+            <p>{{#str}} badge_expire, block_ludifica {{/str}} {{expire}}</p>
+        {{/dateexpire}}
+        <hr>
+        <div class="{{unavailable}}">
+            <a class="badgebuttons openshare_abierta" data-badgeid="{{id}}"><span id="share_ico" ></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
+        </div>
+    </div>
+</div>
+{{/badge}}
