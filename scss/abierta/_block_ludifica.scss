@@ -186,7 +186,7 @@
                             .onebadge {
                                 background-color: #00ffe500;
                                 border: 0;
-                                filter: drop-shadow(0 0 5px #ffbd70);
+                                filter: drop-shadow(0 0 5px #00ffe5);
                             }
 
                             .count {
@@ -521,27 +521,6 @@
 
         .player_info {
             margin-bottom: 129px;
-        }
-    }
-}
-
-@media (max-width: 900px) {
-    .block_ludifica {
-
-        .ludifica_ranking {
-
-            .table_container {
-                margin: auto;
-                margin-top: 230px;
-                max-width: 90%;
-            }
-
-            > .ranking_decoration {
-                margin: auto;
-                width: 100%;
-                margin-top: 50px;
-                right: 0;
-            }
         }
     }
 }
@@ -1184,63 +1163,6 @@
         }
     }
 
-    .share_badge_content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-
-        > div {
-            width: 100%;
-            margin-bottom: 15px;
-
-            .input-group {
-                justify-content: center;
-
-                .msg-badgelink-copy {
-                    left: 122px;
-                }
-            }
-        }
-
-        > a {
-            display: block;
-            margin: 10px 10px 50px 10px;
-            text-align: center;
-            transform: rotate(0deg);
-            transition: 0.1s;
-            font-size: 40px;
-            filter: drop-shadow(0 2px 1px #fff);
-
-            &:hover {
-                filter: saturate(1);
-                transform: rotate(2deg);
-            }
-
-            > i {
-
-                &:hover {
-                    transform: rotate(2deg);
-                    color: #31177f;
-                    filter: drop-shadow(-2px 2px 3px #ffbd70);
-                }
-            }
-        }
-
-        .badge_linkedin {
-            background: url('[[pix:theme|block_ludifica/linkedin]]') no-repeat center center;
-        }
-
-        .badge_facebook {
-            background: url('[[pix:theme|block_ludifica/facebook]]') no-repeat center center;
-        }
-
-        .badge_twitter {
-            background: url('[[pix:theme|block_ludifica/twitter]]') no-repeat center center;
-        }
-
-    }
-
     .badgebuttons {
         background-color: #fff;
         padding: 5px;
@@ -1274,14 +1196,57 @@
     }
 
     .unavailable {
-        mix-blend-mode: multiply;
-        pointer-events: none;
         filter: saturate(1);
     }
 
-    .unavailable .info-box {
+    .unavailable img {
+        mix-blend-mode: multiply;
+    }
+
+    .unavailable .openshare_abierta {
         display: none;
     }
+
+    .modal-body {
+
+        h5 {
+            color: #58595b;
+        }
+    }
+}
+
+#page-blocks-ludifica-badges .card-body {
+
+    .list-group-item {
+        border: none;
+
+        > a {
+            display: block;
+            text-align: center;
+            transform: rotate(0deg);
+            transition: 0.1s;
+            font-size: 40px;
+            filter: drop-shadow(0 2px 1px #fff);
+
+            &:hover {
+                transform: rotate(2deg);
+                filter: drop-shadow(-2px 2px 3px #31177f);
+            }
+        }
+    }
+
+    .badge_linkedin {
+        background: url('[[pix:theme|block_ludifica/linkedin]]') no-repeat center center;
+    }
+
+    .badge_facebook {
+        background: url('[[pix:theme|block_ludifica/facebook]]') no-repeat center center;
+    }
+
+    .badge_twitter {
+        background: url('[[pix:theme|block_ludifica/twitter]]') no-repeat center center;
+    }
+
 }
 
 /* Independent because is loaded into a dialogue. */
@@ -1482,7 +1447,7 @@
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
 
     #page-blocks-ludifica-tickets,
     #page-blocks-ludifica-avatars,
@@ -1567,6 +1532,20 @@
     }
 
     #page-blocks-ludifica-badges {
+
+        .badges_decoration {
+            display: block;
+            margin: auto;
+        }
+
+        #badges-box {
+            #badges-list {
+                overflow: initial;
+                max-height: none;
+                justify-content: center;
+            }
+        }
+
         #block_ludifica-badges {
             background: #c1c1eb url('[[pix:theme|block_ludifica/back_store_mobile]]') no-repeat;
             background-position-y: 39px;
@@ -1587,5 +1566,28 @@
                 width: 90%;
             }
         }
+    }
+
+    .block_ludifica {
+
+        .ludifica_ranking {
+
+            .table_container {
+                margin: auto;
+                margin-top: 230px;
+                max-width: 90%;
+            }
+
+            > .ranking_decoration {
+                margin: auto;
+                width: 100%;
+                margin-top: 50px;
+                right: 0;
+            }
+        }
+    }
+
+    .badges-box {
+        margin-bottom: 70px;
     }
 }

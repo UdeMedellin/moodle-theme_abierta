@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-define(['jquery', 'core/modal_factory', 'core/str'], function($, ModalFactory, str, Log) {
+define(['jquery', 'core/modal_factory', 'core/str', 'core/log', 'core/templates'], function($, ModalFactory, str, Log, Templates) {
   'use strict';
 
     // Load strings.
@@ -548,44 +548,37 @@ define(['jquery', 'core/modal_factory', 'core/str'], function($, ModalFactory, s
             // ==============================================================================================
 
             $('.openbadgeinfo').on('click', function() {
-                var $content = $('.more-badge');
-                var $title = $content.attr('title');
+
+                var badge = {
+                    "id": $(this).data('badgeid')
+                };
+
+                var $badge = $('#badge-' + badge.id);
+
+                badge.description = $badge.data('description');
+                badge.thumbnail = $badge.find('.thumbnail').attr('src');
+                badge.expire = $badge.data('expire');
+                badge.unavailable = $badge.data('unavailable');
+                badge.name = $badge.data('name');
+
+                var badgedata = {
+                    "description": badge.description,
+                    "thumbnailurl": badge.thumbnail,
+                    "expire": badge.expire,
+                    "unavailable": badge.unavailable,
+                    "badge": badge
+                };
 
                 ModalFactory.create({
-                    title: $title,
-                    body: $content.html(),
+                    title: badge.name,
+                    body: Templates.render('block_ludifica/badgeinfo', badgedata),
                 }).then(function(modal) {
                     return modal.show().then(function() {
-                        $('.openshare-from_modal').on('click', function() {
-                            var $sharecontent = $('.share_badge_modal');
-                            var $sharetitle = $sharecontent.attr('title');
 
-                            ModalFactory.create({
-                                title: $sharetitle,
-                                body: $sharecontent.html(),
-                            }).then(function(modal) {
-                                return modal.show().then(function() {
-                                    $('input[name="badgelink"]').on('click', function() {
-                                        var $input = $(this);
-                                        $input.select();
-                                        document.execCommand("copy");
+                        $('.openshare_abierta').on('click', function() {
 
-                                        var $msg = $('<div class="msg-badgelink-copy">' +
-                                        s.badgelinkcopiedtoclipboard +
-                                        '</div>');
+                            $badge.find('.openshare').trigger('click');
 
-                                        $input.parent().append($msg);
-                                        window.setTimeout(function() {
-                                            $msg.remove();
-                                        }, 1600);
-                                    });
-                                    return true;
-                                });
-                            }).fail(function(e) {
-                                Log.debug('Error creating modal share buttons');
-                                Log.debug(e);
-                            });
-                            return true;
                         });
                     });
                 });

@@ -38,50 +38,21 @@
         </div>
         <div id="badges-list" class="row">
             {{#badges}}
-            <div class="col-lg-6 onebadge">
+            <div id="badge-{{id}}" class="col-lg-6 onebadge" data-name="{{name}}" data-uniquehash="{{uniquehash}}" data-year="{{year}}" data-month="{{month}}" data-description="{{description}}" data-expire="{{expire}}" data-unavailable="{{unavailable}}" data-networks="{{networks}}">
                 <div class="badgecontent {{unavailable}}">
                     <div>
-                        <img class="badge_picture_ludifica" src="{{thumbnail}}" alt="{{name}}" />
+                        <a href="{{url}}" class="shareurl">
+                            <img class="thumbnail badge_picture_ludifica" src="{{thumbnail}}" alt="{{name}}" />
+                        </a>
                     </div>
                     <div>
                         <div class="info-box">
-                            <a class="badgebuttons openbadgeinfo"><span id="moreinfo_ico"></span>{{#str}} moreinfo, block_ludifica {{/str}}</a>
-                            <a class="badgebuttons openshare"><span id="share_ico" ></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
+                            <a class="badgebuttons openbadgeinfo" data-badgeid="{{id}}"><span id="moreinfo_ico"></span>{{#str}} moreinfo, block_ludifica {{/str}}</a>
+                            <a class="badgebuttons openshare" data-badgeid="{{id}}"><span id="share_ico" ></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
                         </div>
                         <div class="more-badge block_ludifica-modal" title="{{name}}">
-                            <div class="more_badge_content">
-                                <div class="mr-4">
-                                    <img src="{{thumbnail}}" alt="{{name}}">
-                                </div>
-                                <div>
-                                    <p>{{description}}</p>
-                                    {{#dateexpire}}
-                                    <p>{{#str}} badge_expire, block_ludifica {{/str}} {{expire}}</p>
-                                    {{/dateexpire}}
-                                    <hr>
-                                    <a class="badgebuttons openshare-from_modal"><span id="share_ico"></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
-                                </div>
-                            </div>
                         </div>
                         <div class="share_badge_modal block_ludifica-modal" title="{{#str}} badge_share_title, block_ludifica {{/str}}">
-                            <img src="{{thumbnail}}" alt="{{name}}">
-                            <div class="share_badge_content">
-                                <div class="input-container">
-                                    <div class="input-group">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-link"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text" name="badgelink" aria-label="badge link" value="{{url}}">
-                                    </div>
-                                </div>
-                                {{#networks}}
-                                <a href="{{url}}" target="_blank">
-                                    <i class="fa fa-lg fa-{{icon}}"></i>
-                                </a>
-                                {{/networks}}
-                            </div>
                         </div>
                     </div>
                 </div>
