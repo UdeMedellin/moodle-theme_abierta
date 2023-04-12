@@ -128,15 +128,8 @@ $string['statstitle'] = 'Estadísticas';
 
 // To block_ludifica
 $string['imgranking'] = 'Image decoration ranking';
-$string['home'] = 'Inicio';
 $string['numpoints'] = 'Puntos';
 $string['numcoins'] = 'UVits';
-$string['ranking_button'] = 'Ranking';
-$string['ranking_site'] = 'Sitio';
-$string['ranking_last'] = 'Último mes';
-$string['ranking_course'] = 'Curso';
-$string['dynamichelp_button'] = 'Ayuda';
-$string['badges_button'] = 'Logros';
 $string[''] = '';
 $string[''] = '';
 $string[''] = '';
