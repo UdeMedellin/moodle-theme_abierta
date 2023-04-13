@@ -130,6 +130,7 @@ $string['statstitle'] = 'Estadísticas';
 $string['imgranking'] = 'Image decoration ranking';
 $string['numpoints'] = 'Puntos';
 $string['numcoins'] = 'UVits';
+$string['store'] = 'Tienda';
 $string[''] = '';
 $string[''] = '';
 $string[''] = '';
