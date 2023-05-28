@@ -556,7 +556,7 @@ define(['jquery', 'core/modal_factory', 'core/str', 'core/log', 'core/templates'
                 var $badge = $('#badge-' + badge.id);
 
                 badge.description = $badge.data('description');
-                badge.thumbnail = $badge.find('.thumbnail').attr('src');
+                badge.thumbnail = $badge.find('.picture-box img').attr('src');
                 badge.expire = $badge.data('expire');
                 badge.unavailable = $badge.data('unavailable');
                 badge.name = $badge.data('name');
@@ -569,16 +569,18 @@ define(['jquery', 'core/modal_factory', 'core/str', 'core/log', 'core/templates'
                     "badge": badge
                 };
 
-                ModalFactory.create({
-                    title: badge.name,
-                    body: Templates.render('block_ludifica/badgeinfo', badgedata),
-                }).then(function(modal) {
-                    return modal.show().then(function() {
+                Templates.render('block_ludifica/badgeinfo', badgedata).then(function(content) {
+                    ModalFactory.create({
+                        title: badge.name,
+                        body: content,
+                    }).then(function(modal) {
+                        return modal.show().then(function() {
 
-                        $('.openshare_abierta').on('click', function() {
+                            $('.openshare_abierta').on('click', function() {
 
-                            $badge.find('.openshare').trigger('click');
+                                $badge.find('.openshare').trigger('click');
 
+                            });
                         });
                     });
                 });
