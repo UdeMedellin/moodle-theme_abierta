@@ -38,24 +38,40 @@
         </div>
         <div id="badges-list" class="row">
             {{#badges}}
-            <div id="badge-{{id}}" class="col-lg-6 onebadge" data-name="{{name}}" data-uniquehash="{{uniquehash}}" data-year="{{year}}" data-month="{{month}}" data-description="{{description}}" data-expire="{{expire}}" data-unavailable="{{unavailable}}" data-networks="{{networks}}">
+            <div id="badge-{{id}}" class="col-lg-6 onebadge {{#inactive}}notactive{{/inactive}}" data-name="{{name}}" data-uniquehash="{{uniquehash}}" data-year="{{year}}" data-month="{{month}}" data-description="{{description}}" data-expire="{{expire}}" data-unavailable="{{unavailable}}" data-networks="{{networks}}">
                 <div class="badgecontent {{unavailable}}">
-                    <div>
-                        <a href="{{url}}" class="shareurl">
-                            <img class="thumbnail badge_picture_ludifica" src="{{thumbnail}}" alt="{{name}}" />
-                        </a>
+                    <div class="picture-box">
+                        {{#url}}<a href="{{url}}" class="shareurl">{{/url}}
+                            {{{thumbnail}}}
+                        {{#url}}</a>{{/url}}
                     </div>
                     <div>
                         <div class="info-box">
                             <a class="badgebuttons openbadgeinfo" data-badgeid="{{id}}"><span id="moreinfo_ico"></span>{{#str}} moreinfo, block_ludifica {{/str}}</a>
-                            <a class="badgebuttons openshare" data-badgeid="{{id}}"><span id="share_ico" ></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
+                            {{^inactive}}
+                                <a class="badgebuttons openshare" data-badgeid="{{id}}"><span id="share_ico" ></span>{{#str}} badge_share, block_ludifica {{/str}}</a>
+                            {{/inactive}}
                         </div>
-                        <div class="more-badge block_ludifica-modal" title="{{name}}">
-                        </div>
-                        <div class="share_badge_modal block_ludifica-modal" title="{{#str}} badge_share_title, block_ludifica {{/str}}">
-                        </div>
+                        <div class="more-badge block_ludifica-modal" title="{{name}}"></div>
+                        <div class="share_badge_modal block_ludifica-modal" title="{{#str}} badge_share_title, block_ludifica {{/str}}"></div>
                     </div>
                 </div>
+                {{#canedit}}
+                    <div class="improvecriteria">
+                        <h5>{{#str}} improvecriteria, block_ludifica {{/str}}</h5>
+                        {{#currentcriteria}}
+                            <span class="badge bg-primary rounded-pill" data-type="{{type}}">{{label}}</span>
+                        {{/currentcriteria}}
+                        {{^hascriteria}}
+                            <p>{{#str}} improvecriterianot, block_ludifica {{/str}}</p>
+                        {{/hascriteria}}
+                        {{#inactive}}
+                            <a class="btn btn-link" href="{{baseurl}}/blocks/ludifica/improvecriteria.php?badgeid={{id}}">
+                                {{#pix}} i/settings, core {{/pix}}
+                            </a>
+                        {{/inactive}}
+                    </div>
+                {{/canedit}}
             </div>
             {{/badges}}
             {{^badges}}
