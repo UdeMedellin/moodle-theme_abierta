@@ -119,6 +119,10 @@
             position: relative;
             margin-bottom: 100px;
 
+            .avatar-box {
+                background: transparent;
+            }
+
             .detailscol {
                 width: 90%;
                 margin: auto;
@@ -215,6 +219,10 @@
         }
 
         .general-buttons {
+
+            a {
+                color: #7bfae3;
+            }
 
             .home-button {
                 filter: grayscale(1);
